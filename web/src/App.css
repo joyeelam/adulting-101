@@ -1,4 +1,15 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding-bottom: 15px;
+  position: relative;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +46,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

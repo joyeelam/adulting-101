@@ -4,6 +4,8 @@ import axios from 'axios'
 import {Button, Form, FormGroup, FormText, Input} from "reactstrap"
 import {Player} from '@lottiefiles/react-lottie-player'
 
+import LoginGoogle from '../components/GoogleLogin'
+
 const LoginForm = ({setCurrentUser, toggle}) => {
 
   const [username, setUsername] = useState("")
@@ -41,7 +43,7 @@ const LoginForm = ({setCurrentUser, toggle}) => {
         </FormGroup>
         <hr/>
         <FormGroup>
-          <Button color="success" disabled>Log in with Google</Button>
+          <LoginGoogle setCurrentUser={setCurrentUser} toggle={toggle}/>
         </FormGroup>
         <FormText>
           Don't have an account? <Button color="link">Sign Up.</Button>

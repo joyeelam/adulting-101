@@ -19,7 +19,7 @@ const SignUpForm = ({setCurrentUser, toggle}) => {
   const [passwordValid, setPasswordValid] = useState(false)
 
   const emailRegex = /\S+@\S+\.\S+/
-  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+=])[A-Za-z\d~!@#$%^&*()_+=]{6,}$/
 
   const signUp = () => {
     axios({
@@ -39,6 +39,7 @@ const SignUpForm = ({setCurrentUser, toggle}) => {
       setCurrentUser(true)
     })
     .catch(error => {
+      console.log(error)
       console.error(error.response)
     })
   }

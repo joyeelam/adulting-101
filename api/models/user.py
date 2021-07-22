@@ -38,9 +38,9 @@ class User(BaseModel, UserMixin):
             if self.password.strip() == "":
                 self.errors["Password"] = "Password is required"
             else:
-                password_regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$"
+                password_regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+=])[A-Za-z\d~!@#$%^&*()_+=]{6,}$"
                 check_password = re.search(password_regex, self.password)
                 if check_password:
                     self.password = generate_password_hash(self.password)
                 else:
-                    self.errors["Password2"] = ["Password should be longer than 6 characters", "Password should have both uppercase and lowercase characters", "Password should have at least one special character"]
+                    self.errors["Password2"] = ["Password should have both uppercase and lowercase characters", "Password should have at least one special character", "Password should have at least one number"]

@@ -45,7 +45,7 @@ const NavigationBar = ({logOut}) => {
                   <LoginModal setCurrentUser={setCurrentUser}/>
                 </NavItem>
                 <NavItem>
-                  <SignUpModal/>
+                  <SignUpModal setCurrentUser={setCurrentUser}/>
                 </NavItem>
               </>
             }

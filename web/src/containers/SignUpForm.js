@@ -174,9 +174,9 @@ const SignUpForm = ({setCurrentUser, toggle}) => {
       return <FormFeedback invalid>
         <List>
           <ul>
-            <li>Password should be at least 6 characters.</li>
             <li>Password should have both uppercase and lowercase characters.</li>
             <li>Password should have at least one special character.</li>
+            <li>Password should have at least one number.</li>
           </ul>
         </List>
       </FormFeedback>

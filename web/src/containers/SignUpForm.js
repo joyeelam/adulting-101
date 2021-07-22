@@ -57,6 +57,7 @@ const SignUpForm = ({setCurrentUser, toggle}) => {
       }
     })
     .catch(error => {
+      console.log(error)
       console.error(error.response)
     })
   }

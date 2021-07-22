@@ -9,6 +9,12 @@ body {
   min-width: 100vw;
 }
 
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /* .App {
   text-align: center;
 }

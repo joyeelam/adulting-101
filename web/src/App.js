@@ -2,6 +2,7 @@ import {useState} from 'react'
 import {Route, useHistory} from 'react-router-dom'
 
 import Homepage from './pages/Homepage'
+import Trivia from './pages/Trivia'
 
 import NavigationBar from './components/Navbar'
 
@@ -22,7 +23,8 @@ function App() {
   return (
     <div className='App'>
       <NavigationBar logOut = {logOut} />
-      <Route exact path='/home' component={Homepage}/>
+      <Route exact path = '/home' component = {Homepage}/>
+      <Route exact path = '/trivia' component = {Trivia}/>
     </div>
   )
 }

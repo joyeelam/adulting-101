@@ -17,7 +17,7 @@ def create():
     user = User(username=username, email=email, password=password)
     if user.save():
         access_token = create_access_token(identity=user.id)
-        return {'token': access_token, 'msg': 'User successfully created', 'user_id': user.id}
+        return jsonify({'token': access_token, 'msg': 'User successfully created', 'user_id': user.id}), 201
     else:
         return make_response('Request failed', 500)
 
@@ -33,7 +33,7 @@ def create_token():
         result = check_password_hash(hashed_password, password)
         if result:
             access_token = create_access_token(identity=user.id)
-            return {'token': access_token, 'user_id': user.id}
+            return jsonify({'token': access_token, 'user_id': user.id}), 201
     else:
         return jsonify({'msg': 'Bad username or password'}), 401
 
@@ -42,15 +42,15 @@ def create_token():
 def check_username(username):
     existing_username = User.get_or_none(User.username == username)
     if existing_username:
-        return {'valid': False}
+        return jsonify({'valid': False}), 400
     else:
-        return {'valid': True}
+        return jsonify({'valid': True}), 200
 
 @users_api_blueprint.route('/check_email/<email>', methods=['GET'])
 @cross_origin()
 def check_email(email):
     existing_email = User.get_or_none(User.email == email)
     if existing_email:
-        return {'valid': False}
+        return jsonify({'valid': False}), 400
     else:
-        return {'valid': True}
+        return jsonify({'valid': True}), 200

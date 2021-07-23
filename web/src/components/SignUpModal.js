@@ -10,7 +10,7 @@ const SignUpModal = ({setCurrentUser}) => {
 
   return (
     <div>
-      <Button outline color='secondary' onClick={toggle}>Sign Up</Button>
+      <Button color='light' onClick={toggle}>Sign Up</Button>
       <Modal isOpen={modal} toggle={toggle}>
         <ModalBody>
           <SignUpForm toggle={toggle} setCurrentUser={setCurrentUser}/>

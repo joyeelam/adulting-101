@@ -1,6 +1,7 @@
 import {useSelector, useDispatch} from 'react-redux'
 
 const FetchButton = (props) => {
+
   const questionCategory = useSelector(state => state.options.question_category)
   const questionDifficulty = useSelector(state => state.options.question_difficulty)
 

@@ -35,7 +35,8 @@ const SignUpForm = ({setCurrentUser, toggle}) => {
       // console.log(resp.data)
       localStorage.setItem('token', resp.data.token)
       toggle()
-      history.push('/home')
+      window.location.reload()
+      history.push('/')
       setCurrentUser(true)
     })
     .catch(error => {
@@ -256,12 +257,10 @@ const SignUpForm = ({setCurrentUser, toggle}) => {
           {getConfirmPasswordFeedback()}
         </FormGroup>
         <hr/>
-        <FormGroup>
-          <Button color="success" disabled>Sign up with Google</Button>
-        </FormGroup>
         <FormText>
-          Already a member? <Button color="link">Login here.</Button>
+          Already a member? <Button color="link">Sign in here.</Button>
         </FormText>
+        <hr/>
       </Form>
       <Button color="primary" onClick={signUp}>Sign Up</Button>{' '}
       <Button color="secondary" onClick={toggle}>Cancel</Button>

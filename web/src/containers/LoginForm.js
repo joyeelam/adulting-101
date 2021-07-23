@@ -4,8 +4,6 @@ import axios from 'axios'
 import {Button, Form, FormGroup, FormText, Input} from "reactstrap"
 import {Player} from '@lottiefiles/react-lottie-player'
 
-import LoginGoogle from '../components/GoogleLogin'
-
 const LoginForm = ({setCurrentUser, toggle}) => {
 
   const [username, setUsername] = useState("")
@@ -21,9 +19,11 @@ const LoginForm = ({setCurrentUser, toggle}) => {
       // console.log(localStorage.getItem("token"))
       setCurrentUser(true)
       toggle()
-      history.push('/home')
+      window.location.reload()
+      history.push('/')
     })
     .catch(error => {
+      console.log(error)
       console.error(error.response)
     })
   }
@@ -42,9 +42,6 @@ const LoginForm = ({setCurrentUser, toggle}) => {
           <Input type="password" placeholder="Password" value={password} onChange={(e) => {setPassword(e.target.value)}}/>
         </FormGroup>
         <hr/>
-        <FormGroup>
-          <LoginGoogle setCurrentUser={setCurrentUser} toggle={toggle}/>
-        </FormGroup>
         <FormText>
           Don't have an account? <Button color="link">Sign Up.</Button>
         </FormText>

@@ -1,10 +1,11 @@
 import {useState} from 'react'
 import {Route, useHistory} from 'react-router-dom'
 
+import NavigationBar from './components/Navbar'
+
 import Homepage from './pages/Homepage'
 import Trivia from './pages/Trivia'
-
-import NavigationBar from './components/Navbar'
+import Landing from './pages/Landing'
 
 import './App.css'
 
@@ -20,13 +21,21 @@ function App() {
     history.push('/')
   }
 
-  return (
-    <div className='App'>
-      <NavigationBar logOut = {logOut} />
-      <Route exact path = '/home' component = {Homepage}/>
-      <Route exact path = '/trivia' component = {Trivia}/>
-    </div>
-  )
+  if(!loggedIn) {
+    return (
+      <>
+        <Route exact path='/' component={Landing}/>
+      </>
+    )
+  } else {
+    return (
+      <>
+        <NavigationBar logOut = {logOut} />
+        <Route exact path='/' component={Homepage}/>
+        <Route exact path='/trivia' component={Trivia}/>
+      </>
+    )
+  }
 }
 
 export default App

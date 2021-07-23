@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
+import {Player} from '@lottiefiles/react-lottie-player'
 
 import FetchButton from './FetchButton'
 
@@ -48,9 +49,9 @@ const Settings = () => {
 
   if (!loading) {
     return (
-      <>
-        <div>
-          <h2>Select Category:</h2>
+      <div className='quiz'>
+        <div className='quiz-setting'>
+          <h6>Select Category:</h6>
           <select value={questionCategory} onChange={handleCategoryChange}>
             <option>All</option>
             {options &&
@@ -61,21 +62,23 @@ const Settings = () => {
               ))}
           </select>
         </div>
-        <div>
-          <h2>Select Difficulty:</h2>
+        <div className='quiz-setting'>
+          <h6>Select Difficulty:</h6>
           <select value={questionDifficulty} onChange={handleDifficultyChange}>
             <option value="" key="difficulty-0">All</option>
             <option value="easy" key="difficulty-1">Easy</option>
             <option value="medium" key="difficulty-2">Medium</option>
             <option value="hard" key="difficulty-3">Hard</option>
           </select>
+        </div>
+        <div className='quiz-setting'>
           <FetchButton text='Get Started!'/>
         </div>
-      </>
+      </div>
     )
   } else {
     return (
-      <p>Loading...</p>
+      <Player autoplay loop src = 'https://assets1.lottiefiles.com/packages/lf20_vgiig7fv.json' style = {{ height: '300px', width: '300px' }}></Player>
     )
   }
 }

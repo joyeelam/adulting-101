@@ -87,10 +87,11 @@ const Question = () => {
 
   if (!question) {
     return <div>Loading...</div>
-  }  
+  }
 
   return (
-    <div>
+    <div className='quiz'>
+      <p>{question.category}</p>
       <p>Question {questionIndex + 1}</p>
       <h3>{question.question}</h3>
       <ul>

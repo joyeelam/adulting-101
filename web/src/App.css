@@ -9,6 +9,26 @@ body {
   width: 100vw;
 }
 
+/* start styling for landing page */
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  background-color: #003366;
+}
+
+.landing-title {
+  font-family: 'Tourney', cursive;
+  color: white;
+  font-size: 3rem;
+}
+
+/* end styling for landing page */
+
 /* start styling for trivia page */
 
 .quiz-container {

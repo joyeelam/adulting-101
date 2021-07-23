@@ -5,8 +5,6 @@ import SignUpModal from '../components/SignUpModal'
 import LoginModal from '../components/LoginModal'
 import LoginGoogle from '../components/GoogleLogin'
 
-import Homepage from './Homepage'
-
 const Landing = () => {
 
   const [isOpen, setIsOpen] = useState(false)

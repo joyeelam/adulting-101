@@ -9,63 +9,116 @@ body {
   width: 100vw;
 }
 
+/* start styling for trivia page */
+
 .quiz-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.center-container {
+  padding: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100vh;
-  background-color: #003366;
 }
 
-.landing-title {
-  font-family: 'Tourney', cursive;
-  color: white;
-  font-size: 3rem;
-}
-
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.quiz-setting {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.quiz button {
+  display: block;
+  line-height: 1.3;
+  padding: 0.5em;
+  max-width: 100%;
+  margin-top: 1em;
+  border: 1px solid #000000;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  border-radius: 0.5em;
+  cursor: pointer;
+  background-color: #e6e6e6;
+  color: #000000;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+.quiz button:hover {
+  background-color: #4d4d4d;
+  color: #ffffff;
+  border-color: #cccccc;
+}
+
+.quiz select {
+  display: block;
+  line-height: 1.3;
+  padding: 0.6em 1.4em 0.5em 0.8em;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 1em;
+  border: 1px solid #000000;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  border-radius: 0.5em;
+}
+
+.quiz select:hover {
+  border-color: #cccccc;
+}
+
+.quiz ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.quiz li {
+  display: block;
+  line-height: 1.3;
+  padding: 0.6em 1.4em 0.5em 0.8em;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 1em;
+  border: 1px solid #000000;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.quiz li:hover {
+  background-color: #b3b3b3;
+  color: #000000;
+}
+
+.quiz li.correct {
+  background-color: #00cc66;
+}
+
+.quiz li.selected {
+  background-color: #e63900;
+}
+
+.quiz-final {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.quiz-final button {
+  display: block;
+  line-height: 1.3;
+  padding: 0.5em;
+  max-width: 100%;
+  margin: 2rem;
+  border: 1px solid #000000;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  border-radius: 0.5em;
+  cursor: pointer;
+  background-color: #e6e6e6;
+  color: #000000;
+}
+
+.quiz-final button:hover {
+  background-color: #4d4d4d;
+  color: #ffffff;
+  border-color: #cccccc;
+}
+
+/* end styling for trivia page */

@@ -2,6 +2,7 @@ import {useSelector} from 'react-redux'
 
 import Settings from '../containers/quiz/Settings'
 import Question from '../containers/quiz/Question'
+import Final from '../containers/quiz/Final'
 
 const Trivia = () => {
 
@@ -14,12 +15,13 @@ const Trivia = () => {
     component = <Question/>
   } else if (!questions.length) {
     component = <Settings/>
+  } else {
+    component = <Final/>
   }
 
   return (
-    <div className = 'quiz'>
-      <h1>Quiz</h1>
-      <div className='quiz-container'>{component}</div>
+    <div className='quiz-container'>
+      {component}
     </div>
   )
 }

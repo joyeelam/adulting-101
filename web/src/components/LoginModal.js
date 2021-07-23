@@ -10,7 +10,7 @@ const LoginModal = ({setCurrentUser}) => {
 
   return (
     <div>
-      <Button outline color='secondary' onClick={toggle}>Sign In</Button>
+      <Button color='light'  onClick={toggle}>Sign In</Button>
       <Modal isOpen={modal} toggle={toggle}>
         <ModalBody>
           <LoginForm setCurrentUser={setCurrentUser} toggle={toggle} />

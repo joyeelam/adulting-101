@@ -2,6 +2,7 @@ from flask import Blueprint, request, make_response, jsonify
 from flask_cors import cross_origin
 from flask_jwt_extended import create_access_token
 from werkzeug.security import check_password_hash
+import rstr
 
 from models.user import User
 
@@ -54,3 +55,31 @@ def check_email(email):
         return jsonify({'valid': False})
     else:
         return jsonify({'valid': True})
+
+@users_api_blueprint.route('/google_login', methods=['POST'])
+@cross_origin()
+def google_login():
+    user_data = request.get_json()
+    username = user_data['givenName'] + user_data['googleId']
+    email = user_data['email']
+    password = rstr.xeger(r'[A-Za-z\d~!@#$%^&*()_+=]{6,}')
+
+    user = User.get_or_create(email = email, defaults={'username': username, 'password': password})
+
+    # if user:
+    #     access_token = create_access_token(identity=user.id)
+    #     return jsonify({'token': access_token, 'user_id': user.id})
+    # else:
+    #     return make_response('Request failed', 500)
+
+    user = User.get_or_none(User.email == email)
+    if user:
+        access_token = create_access_token(identity=user.id)
+        return jsonify({'token': access_token, 'user_id': user.id})
+    else:
+        user = User(username=username, email=email, password=password)
+        if user.save():
+            access_token = create_access_token(identity=user.id)
+            return jsonify({'token': access_token, 'user_id': user.id})
+        else:
+            return make_response('Request failed', 500)

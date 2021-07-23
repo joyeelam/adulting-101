@@ -2,9 +2,6 @@ import {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import {Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink} from 'reactstrap'
 
-import LoginModal from './LoginModal'
-import SignUpModal from './SignUpModal'
-
 const NavigationBar = ({logOut}) => {
 
   const history = useHistory()
@@ -26,29 +23,16 @@ const NavigationBar = ({logOut}) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">Project App</NavbarBrand>
+        <NavbarBrand className='landing-title' href="/">Adulting 101</NavbarBrand>
         <NavbarToggler onClick={toggle}/>
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ms-auto" navbar>
-            {currentUser ?
-              <>
-                <NavItem>
-                  <NavLink onClick={handleQuiz}>Trivias</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink onClick={handleLogout}>Log Out</NavLink>
-                </NavItem>
-              </>
-              :
-              <>
-                <NavItem>
-                  <LoginModal setCurrentUser={setCurrentUser}/>
-                </NavItem>
-                <NavItem>
-                  <SignUpModal setCurrentUser={setCurrentUser}/>
-                </NavItem>
-              </>
-            }
+            <NavItem>
+              <NavLink onClick={handleQuiz}>Trivias</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink onClick={handleLogout}>Log Out</NavLink>
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>

@@ -62,7 +62,7 @@ const Recipes = () => {
         /> :
             <div></div>}
 
-        {isLoading ? (<h5> Fetching Recipes from 3rd party... Wait a moment please </h5>) :
+        {isLoading ? (<p> Fetching Recipes from 3rd party... Wait a moment please </p>) :
 
             <div className="recipes">
 
@@ -79,10 +79,10 @@ const Recipes = () => {
             </div>
         }
 
-        {!firstSearch && noHits ? <h5> No Recipes Found </h5> : <p> </p>}
+        {!firstSearch && noHits ? <p> No Recipes Found </p> : <p> </p>}
 
       </div>
-    )
+    );
 }
 
 export default Recipes

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import style from "./recipe.module.css";
+import axios from 'axios';
 
 // Recipe Component
 const Recipe = ({ title, calories, image, ingredients, source }) => {
@@ -16,14 +17,21 @@ const Recipe = ({ title, calories, image, ingredients, source }) => {
             setSaveStatus(true)
             console.log("Recipe saved to Favorites")
 
-            // axios({
-            //     method: "POST",
-            //     url: "http://localhost:5000/recipe-generator/",
-            //     data: {
-            //         user_id: user_id,
-            //         saved_recipes
-            //     }
-            // })
+            axios({
+                method: "POST",
+                url: "http://localhost:5000/recipe-generator/",
+                data: {
+                    user_id: user_id,
+                    recipe_title: title,
+                    recipe_url: source
+                }
+            })
+                .then(resp => {
+                    console.log(resp);
+                })
+                .catch((error) => {
+                    console.log(error.message);
+                })
         }
         console.log(saveStatus)
     }
@@ -41,12 +49,11 @@ const Recipe = ({ title, calories, image, ingredients, source }) => {
                     <li key={Math.random(150)}>{ingredient.text}</li>
                 ))}
             </ol>
-            <button className={style.recipebtn}> <a className={style.getlink} href={source}> Get Recipe </a> </button>
+            <button className={style.recipebtn}> <a className={style.getlink} href={source} target="_blank" rel="noreferrer" > Get Recipe </a> </button>
         </div >
 
     );
 }
-
 
 
 export default Recipe;

@@ -64,8 +64,7 @@ def google_login():
     email = user_data['email']
     password = rstr.xeger(r'[A-Za-z\d~!@#$%^&*()_+=]{6,}')
 
-    user = User.get_or_create(email = email, defaults={'username': username, 'password': password})
-
+    # user = User.get_or_create(email = email, defaults={'username': username, 'password': password})
     # if user:
     #     access_token = create_access_token(identity=user.id)
     #     return jsonify({'token': access_token, 'user_id': user.id})
@@ -83,3 +82,12 @@ def google_login():
             return jsonify({'token': access_token, 'user_id': user.id})
         else:
             return make_response('Request failed', 500)
+
+@users_api_blueprint.route('/get_user/<id>', methods=['GET'])
+@cross_origin()
+def show(id):
+    user = User.get_or_none(User.id == int(id))
+    if user:
+        return jsonify({'username': user.username, 'email': user.email, 'profile_image': user.profile_image})
+    else:
+        return make_response('Request failed', 500)

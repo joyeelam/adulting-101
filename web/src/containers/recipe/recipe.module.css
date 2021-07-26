@@ -1,0 +1,120 @@
+.recipecard {
+    border-radius: 5%;
+    box-shadow: 0px 5px 10px gray;
+    display: flex;
+    margin: 10px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: white;
+    align-items: center;
+    width: 500px;
+    padding: 0px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: center;
+}
+
+.recipecard:hover {
+    background-color: rgb(248, 244, 213);
+}
+
+.ribbon {
+    width: 0px;
+    height: 50px;
+    background-color: transparent;
+    border: solid 15px rgba(128, 128, 128, 0.355);
+    border-bottom: solid 15px transparent;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+}
+
+.ribbon:hover {
+    width: 0px;
+    height: 58px;
+    background-color: transparent;
+    border: solid 15px #c6214a;
+    border-bottom: solid 15px transparent;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+  }
+
+.ribbonsaved {
+    width: 0px;
+    height: 58px;
+    background-color: transparent;
+    border: solid 15px #c6214a;
+    border-bottom: solid 15px transparent;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+}
+
+.ingredientList {
+    list-style-type: circle;
+    text-align: left;
+}
+
+.image {
+    border-radius: 50%;
+    min-width: 40%;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.recipebtn:hover {
+    animation-name: bounce;
+    cursor: pointer;
+    -moz-animation-name: bounce;
+    background-color: #c6214a7c;
+}
+
+
+@keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translateY(0);
+		-ms-transform:     translateY(0);
+		transform:         translateY(0)
+	}
+	40% {
+		-webkit-transform: translateY(-10px);
+		-ms-transform:     translateY(-10px);
+		transform:         translateY(-10px)
+	}
+	60% {
+		-webkit-transform: translateY(-10px);
+		-ms-transform:     translateY(-10px);
+		transform:         translateY(-10px)
+	}
+}
+.recipebtn {  
+    border-radius: 10%;
+    border-style: dashed;
+    border-width: 1.5px;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+}
+
+.saveBtn {
+    cursor: pointer;
+}
+
+.getlink {
+    text-decoration: none;
+}
+
+.getlink:hover {
+    color: black;
+}

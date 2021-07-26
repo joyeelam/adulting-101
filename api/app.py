@@ -26,9 +26,11 @@ if os.getenv('FLASK_ENV') == 'production':
 else:
     app.config.from_object('config.DevelopmentConfig')
 
+
 @app.before_request
 def before_request():
     db.connect()
+
 
 @app.teardown_request
 def _db_close(exc):
@@ -37,13 +39,16 @@ def _db_close(exc):
         print(db.close())
     return exc
 
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.get_or_none(User.id == user_id)
 
+
 @app.route('/')
 def index():
     return "Hello"
+
 
 @app.route('/time')
 @cross_origin()

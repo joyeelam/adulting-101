@@ -1,0 +1,41 @@
+import React, { useState } from 'react';
+import style from "./recipe.module.css";
+
+// Recipe Component
+const Recipe = ({ title, calories, image, ingredients, source }) => {
+
+    const [saveStatus, setSaveStatus] = useState(false)
+
+    const saveRecipe = () => {
+        if (saveStatus === true) {
+            setSaveStatus(false)
+            console.log("Recipe removed from Favorites")
+        } else {
+            setSaveStatus(true)
+            console.log("Recipe saved to Favorites")
+        }
+        console.log(saveStatus)
+    }
+
+    return (
+
+        <div className={style.recipecard}>
+            <div className={saveStatus === true ? style.ribbonsaved : style.ribbon} onClick={saveRecipe}> </div>
+            <h3> {title} </h3>
+            <img src={image} alt="" className={style.image} />
+            <p> {Math.round(calories)} calories </p>
+            <h4> Ingredients: </h4>
+            <ol className={style.ingredientList}>
+                {ingredients.map(ingredient => (
+                    <li key={Math.random(150)}>{ingredient.text}</li>
+                ))}
+            </ol>
+            <button className={style.recipebtn}> <a className={style.getlink} href={source}> Get Recipe </a> </button>
+        </div >
+
+    );
+}
+
+
+
+export default Recipe;

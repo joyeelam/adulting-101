@@ -1,4 +1,4 @@
-.search-form {
+.search-form{
   min-height: 5vh;
   display: flex;
   justify-content: center;
@@ -58,6 +58,7 @@ h1 {
   }
   }
 
+
 .ingr-img {
   width: 80px;
   height: 80px;
@@ -86,9 +87,6 @@ animation-iteration-count: 1;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 50px;
-}
-
-.App {
   font-family: Karla;
   cursor: default;
   padding-top: 5px;
@@ -108,8 +106,29 @@ button:hover {
   cursor: pointer;
 }
 
+/* .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 60%;
+  height: 50%;
+  overflow: auto;
+}
+
+.modal-content {
+  margin: 15% auto;
+  padding: 20px;
+  width: 50%;
+} */
+
 #header-img:hover {
   cursor: pointer;
+}
+
+path {
+  fill: transparent;
 }
 
 text {

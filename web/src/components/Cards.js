@@ -1,7 +1,6 @@
 import React from 'react';
 import {
-  Card, Button, CardImg, CardTitle, CardText, CardDeck,
-  CardSubtitle, CardBody
+  Card, Button, CardImg, CardTitle, CardText, CardDeck, CardBody
 } from 'reactstrap';
 import './Cards.css';
 import { Route, Link } from "react-router-dom";
@@ -25,7 +24,7 @@ const Cards = (props) => {
                 <CardBody>
                 <CardTitle tag="h5">Finance</CardTitle>
                 <CardText>What is Finance? Finance is a broad term that describes activities associated with banking, leverage or debt, credit, capital markets, money, and investments. Finance also encompasses the oversight, creation, and study of money, banking, credit, investments, assets, and liabilities that make up financial systems. There are plenty of things about Finance that most of us were never taught growing up.</CardText>
-                <a><Button color='primary'>Learn More</Button></a>
+                <Button color='primary'>Learn More</Button>
                 </CardBody>
             </Card> 
             <Card className='card'>
@@ -33,7 +32,7 @@ const Cards = (props) => {
                 <CardBody>
                 <CardTitle tag="h5">General Knowledge</CardTitle>
                 <CardText>General knowledge opens different avenues for one's seeking. It develops students' social, sensitive, reasoning, and analytical thinking skills. It forms an identity right from a tender stage, which only helps build our perspective about the world. The path of learning, be it General Knowledge or science, is neverending. Such as Shaq only ever made one three-pointer in his entire career or You share your birthday with at least 9 million other people in the world.</CardText>
-                <a><Button color='primary'>Learn More</Button></a>
+                <Button color='primary'>Learn More</Button>
                 </CardBody>
             </Card>
         </CardDeck>

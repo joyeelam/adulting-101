@@ -16,7 +16,7 @@ import './App.css'
 
 function App() {
 
-  const [loggedIn, setLoggedIn] = useState(!!localStorage.getItem('token'))
+  const [loggedIn, setLoggedIn] = useState(localStorage.getItem('token'))
   const history = useHistory()
 
   const logOut = (e) => {

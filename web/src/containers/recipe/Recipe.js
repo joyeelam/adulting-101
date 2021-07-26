@@ -7,7 +7,7 @@ const Recipe = ({ title, calories, image, ingredients, source }) => {
     const [saveStatus, setSaveStatus] = useState(false)
 
     const saveRecipe = () => {
-        const user_id = localStorage.getItem('id')
+        // const user_id = localStorage.getItem('id')
 
         if (saveStatus === true) {
             setSaveStatus(false)

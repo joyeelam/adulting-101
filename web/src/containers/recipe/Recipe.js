@@ -7,12 +7,23 @@ const Recipe = ({ title, calories, image, ingredients, source }) => {
     const [saveStatus, setSaveStatus] = useState(false)
 
     const saveRecipe = () => {
+        const user_id = localStorage.getItem('id')
+
         if (saveStatus === true) {
             setSaveStatus(false)
             console.log("Recipe removed from Favorites")
         } else {
             setSaveStatus(true)
             console.log("Recipe saved to Favorites")
+
+            // axios({
+            //     method: "POST",
+            //     url: "http://localhost:5000/recipe-generator/",
+            //     data: {
+            //         user_id: user_id,
+            //         saved_recipes
+            //     }
+            // })
         }
         console.log(saveStatus)
     }

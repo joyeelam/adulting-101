@@ -5,5 +5,5 @@ from models.user import User
 
 
 class user_recipes(BaseModel):
-    saved_recipes = pw.TextField(null=False)
+    saved_recipe = pw.TextField(null=False)
     user = pw.ForeignKeyField(User, backref="savedRecipes")

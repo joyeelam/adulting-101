@@ -1,11 +1,12 @@
-import {useState} from 'react'
-import {Route, useHistory} from 'react-router-dom'
+import { useState } from 'react'
+import { Route, useHistory } from 'react-router-dom'
 
 import NavigationBar from './components/Navbar'
 
 import Landing from './pages/Landing'
 import Homepage from './pages/Homepage'
 import Trivia from './pages/Trivia'
+import Recipes from './pages/Recipes'
 import Dashboard from './pages/Dashboard'
 import EditProfile from './pages/EditProfile'
 
@@ -24,10 +25,10 @@ function App() {
     history.push('/')
   }
 
-  if(!loggedIn) {
+  if (!loggedIn) {
     return (
       <>
-        <Route exact path='/' component={Landing}/>
+        <Route exact path='/' component={Landing} />
       </>
     )
   } else {
@@ -38,6 +39,7 @@ function App() {
         <Route exact path='/trivia' component={Trivia}/>
         <Route exact path='/dashboard' component={Dashboard}/>
         <Route exact path='/edit' component={EditProfile}/>
+        <Route exact path='/recipe-generator' component={Recipes} />
       </>
     )
   }

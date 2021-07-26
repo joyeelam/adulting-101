@@ -1,29 +1,64 @@
-import React, { useState } from 'react';
-import style from "./recipe.module.css";
+import React, { useEffect, useState } from 'react';
+import style from "../../pages/static/recipe.module.css"
 import axios from 'axios';
 
 // Recipe Component
 const Recipe = ({ title, calories, image, ingredients, source }) => {
 
+    const [data, setData] = useState([])
     const [saveStatus, setSaveStatus] = useState(false)
+    const [dataTitle, setDataTitle] = useState("");
+    const [dataUrl, setDataUrl] = useState("");
+    const user_id = localStorage.getItem('id')
+
+
+    const doSomething = () => {
+        axios.get(`http://localhost:5000/recipe-generator/${user_id}`)
+            .then(resp => {
+                const recipes = resp.data
+                setData(recipes)
+                console.log(data)
+                // recipes.map(recipe => {
+                //     console.log(recipe.url)
+                // })
+            })
+            .catch((error) => {
+                console.log(error.message)
+            });
+    };
 
     const saveRecipe = () => {
-        const user_id = localStorage.getItem('id')
 
         if (saveStatus === true) {
             setSaveStatus(false)
             console.log("Recipe removed from Favorites")
+
+            // axios({
+            //     method: "POST",
+            //     url: "http://localhost:5000/recipe-generator/remove",
+            //     data: {
+            //         recipe_url: source
+            //     }
+            // })
+            //     .then(resp => {
+            //         console.log(resp);
+            //     })
+            //     .catch((error) => {
+            //         console.log(error.message);
+            //     })
+
         } else {
             setSaveStatus(true)
             console.log("Recipe saved to Favorites")
 
             axios({
                 method: "POST",
-                url: "http://localhost:5000/recipe-generator/",
+                url: "http://localhost:5000/recipe-generator/save",
                 data: {
                     user_id: user_id,
                     recipe_title: title,
-                    recipe_url: source
+                    recipe_url: source,
+                    recipe_img_url: image
                 }
             })
                 .then(resp => {
@@ -33,8 +68,8 @@ const Recipe = ({ title, calories, image, ingredients, source }) => {
                     console.log(error.message);
                 })
         }
-        console.log(saveStatus)
-    }
+        // console.log(saveStatus)
+    };
 
     return (
 
@@ -50,6 +85,8 @@ const Recipe = ({ title, calories, image, ingredients, source }) => {
                 ))}
             </ol>
             <button className={style.recipebtn}> <a className={style.getlink} href={source} target="_blank" rel="noreferrer" > Get Recipe </a> </button>
+            <button onClick={doSomething}>do something </button>
+
         </div >
 
     );

@@ -9,6 +9,7 @@ import Trivia from './pages/Trivia'
 import Recipes from './pages/Recipes'
 import Dashboard from './pages/Dashboard'
 import EditProfile from './pages/EditProfile'
+import SavedRecipes from './pages/SavedRecipes'
 
 import './App.css'
 
@@ -34,12 +35,13 @@ function App() {
   } else {
     return (
       <>
-        <NavigationBar logOut = {logOut} />
-        <Route exact path='/' component={Homepage}/>
-        <Route exact path='/trivia' component={Trivia}/>
-        <Route exact path='/dashboard' component={Dashboard}/>
-        <Route exact path='/edit' component={EditProfile}/>
+        <NavigationBar logOut={logOut} />
+        <Route exact path='/' component={Homepage} />
+        <Route exact path='/trivia' component={Trivia} />
+        <Route exact path='/dashboard' component={Dashboard} />
+        <Route exact path='/edit' component={EditProfile} />
         <Route exact path='/recipe-generator' component={Recipes} />
+        <Route exact path='/saved-recipes' component={SavedRecipes} />
       </>
     )
   }

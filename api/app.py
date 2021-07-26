@@ -25,6 +25,7 @@ app.register_blueprint(users_api_blueprint, url_prefix='/users')
 
 csrf.exempt(trivias_api_blueprint)
 app.register_blueprint(trivias_api_blueprint, url_prefix='/trivias')
+
 csrf.exempt(recipes_api_blueprint)
 app.register_blueprint(recipes_api_blueprint, url_prefix="/recipe-generator")
 

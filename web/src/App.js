@@ -6,9 +6,11 @@ import NavigationBar from './components/Navbar'
 import Landing from './pages/Landing'
 import Homepage from './pages/Homepage'
 import Trivia from './pages/Trivia'
+
 import Recipes from './pages/Recipes'
 import Dashboard from './pages/Dashboard'
 import EditProfile from './pages/EditProfile'
+import Cooking from './pages/Cooking.js'
 
 import './App.css'
 
@@ -40,9 +42,11 @@ function App() {
         <Route exact path='/dashboard' component={Dashboard}/>
         <Route exact path='/edit' component={EditProfile}/>
         <Route exact path='/recipe-generator' component={Recipes} />
+        <Route exact path = '/cooking' component = {Cooking}/>
       </>
     )
   }
+
 }
 
 export default App

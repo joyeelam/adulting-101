@@ -1,8 +1,14 @@
+import Jumbo from '../components/Jumbo'
+import Cards from '../components/Cards'
+
 const Homepage = () => {
   
   return (
     <div>
-      <h1>Homepage</h1>
+      <div>
+        <Jumbo />
+        <Cards />
+      </div>
     </div>
   )
 }

@@ -28,6 +28,7 @@ const LoginGoogle = ({setCurrentUser}) => {
     .then(resp => {
       // console.log(resp)
       localStorage.setItem('token', resp.data.token)
+      localStorage.setItem("id", resp.data.user_id)
       setCurrentUser(true)
       window.location.reload()
       history.push('/')

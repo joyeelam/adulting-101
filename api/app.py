@@ -8,6 +8,7 @@ from flask_cors import CORS, cross_origin
 from flask_jwt_extended import JWTManager
 
 from blueprints.users.views import users_api_blueprint
+from blueprints.trivias.views import trivias_api_blueprint
 
 from models.user import User
 
@@ -20,6 +21,9 @@ login_manager.init_app(app)
 
 csrf.exempt(users_api_blueprint)
 app.register_blueprint(users_api_blueprint, url_prefix='/users')
+
+csrf.exempt(trivias_api_blueprint)
+app.register_blueprint(trivias_api_blueprint, url_prefix='/trivias')
 
 if os.getenv('FLASK_ENV') == 'production':
     app.config.from_object('config.ProductionConfig')
@@ -43,9 +47,4 @@ def load_user(user_id):
 
 @app.route('/')
 def index():
-    return "Hello"
-
-@app.route('/time')
-@cross_origin()
-def get_current_time():
-    return {'time': time.time()}
+    return "Hello, this is our Flask server"

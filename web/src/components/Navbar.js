@@ -20,6 +20,14 @@ const NavigationBar = ({logOut}) => {
     history.push('/trivia')
   }
 
+  const handleDashboard = (e) => {
+    history.push('/dashboard')
+  }
+
+  const handleRecipe = (e) => {
+    history.push('/recipe-generator')
+  }
+
   return (
     <div>
       <Navbar color="light" light expand="md">
@@ -29,6 +37,12 @@ const NavigationBar = ({logOut}) => {
           <Nav className="ms-auto" navbar>
             <NavItem>
               <NavLink onClick={handleQuiz}>Trivias</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink onClick={handleRecipe}>Recipe Generator</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink onClick={handleDashboard}>Dashboard</NavLink>
             </NavItem>
             <NavItem>
               <NavLink onClick={handleLogout}>Log Out</NavLink>

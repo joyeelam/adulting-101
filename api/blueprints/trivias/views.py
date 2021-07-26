@@ -1,4 +1,4 @@
-from flask import Blueprint, request, make_response
+from flask import Blueprint, request, make_response, jsonify
 from flask_cors import cross_origin
 
 from models.trivia import Trivia
@@ -17,3 +17,12 @@ def create():
         return make_response('Score successfully recorded', 201)
     else:
         return make_response('Request failed', 500)
+
+@trivias_api_blueprint.route('/<id>', methods=['GET'])
+@cross_origin()
+def show(id):
+    trivias = Trivia.select().where(Trivia.user_id == id)
+    score = []
+    for trivia in trivias:
+        score.append({trivia.category: trivia.score})
+    return jsonify(score)

@@ -151,3 +151,20 @@ h5 {
 }
 
 /* end styling for trivia page */
+
+/* start styling for dashboard */
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.dashboard-profile {
+  border-radius: 50%;
+  height: 200px;
+}
+
+/* end styling for dashboard */

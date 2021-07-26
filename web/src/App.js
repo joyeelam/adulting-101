@@ -3,9 +3,11 @@ import {Route, useHistory} from 'react-router-dom'
 
 import NavigationBar from './components/Navbar'
 
+import Landing from './pages/Landing'
 import Homepage from './pages/Homepage'
 import Trivia from './pages/Trivia'
-import Landing from './pages/Landing'
+import Dashboard from './pages/Dashboard'
+import EditProfile from './pages/EditProfile'
 
 import './App.css'
 
@@ -34,6 +36,8 @@ function App() {
         <NavigationBar logOut = {logOut} />
         <Route exact path='/' component={Homepage}/>
         <Route exact path='/trivia' component={Trivia}/>
+        <Route exact path='/dashboard' component={Dashboard}/>
+        <Route exact path='/edit' component={EditProfile}/>
       </>
     )
   }

@@ -16,7 +16,7 @@ const Trivia = () => {
   } else if (!questions.length) {
     component = <Settings/>
   } else {
-    component = <Final/>
+    component = <Final category={questions[0].category}/>
   }
 
   return (

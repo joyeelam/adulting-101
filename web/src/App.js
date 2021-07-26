@@ -18,6 +18,7 @@ function App() {
   const logOut = (e) => {
     e.preventDefault()
     localStorage.removeItem('token')
+    localStorage.removeItem('id')
     setLoggedIn(!loggedIn)
     history.push('/')
   }

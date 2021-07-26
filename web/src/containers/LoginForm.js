@@ -16,6 +16,7 @@ const LoginForm = ({setCurrentUser, toggle}) => {
     axios.post("http://localhost:5000/users/token", {username, password}).then(resp => {
       // console.log(resp)
       localStorage.setItem("token", resp.data.token)
+      localStorage.setItem("id", resp.data.user_id)
       // console.log(localStorage.getItem("token"))
       setCurrentUser(true)
       toggle()

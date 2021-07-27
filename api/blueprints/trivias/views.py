@@ -25,4 +25,5 @@ def show(id):
     score = []
     for trivia in trivias:
         score.append({trivia.category: trivia.score})
-    return jsonify(score)
+    # print(sum(score))
+    return jsonify({'score': score})

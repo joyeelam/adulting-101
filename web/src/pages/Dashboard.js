@@ -1,6 +1,10 @@
+import './static/Profile.css'
 import axios from 'axios'
 import {useState, useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
+import {Button} from 'reactstrap'
+
+import BadgeContainer from '../containers/BadgeContainer'
 
 const Dashboard = () => {
 
@@ -18,31 +22,20 @@ const Dashboard = () => {
     })
   }, [user_id])
 
-  const [score, setScore] = useState([])
-
-  useEffect(()=>{
-    axios.get(`http://localhost:5000/trivias/${user_id}`).then(resp => {
-      // console.log(resp)
-      setScore(resp.data)
-    })
-    .catch(error => {
-      console.log(error)
-    })
-  }, [])
-
   const handleEdit = (e) => {
     history.push('/edit')
   }
 
   return (
     <div className='dashboard-container'>
-      <h1 className='title'>Dashboard</h1>
       <img className='dashboard-profile' src={user.profile_image} alt='profile'/>
-      <h3>{user.username}</h3>
-      <button onClick={handleEdit}>Edit Profile</button>
+      <br/>
+      <h3 className='title'>{user.username}</h3>
+      <br/>
+      <Button onClick={handleEdit}>Edit Profile</Button>
       <hr/>
       <div className='badges-container'>
-        Badges will go here (WIP)
+        <BadgeContainer/>
       </div>
     </div>
   )

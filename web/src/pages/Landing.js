@@ -1,3 +1,4 @@
+import './static/Landing.css'
 import {useState} from 'react'
 import {Player} from '@lottiefiles/react-lottie-player'
 
@@ -14,8 +15,8 @@ const Landing = () => {
   return (
     <div className='center-container'>
       <h1 className='landing-title'>Adulting 101</h1>
-      <h5>We're all pretending to be adults here</h5>
-      <Player autoplay loop src = 'https://assets5.lottiefiles.com/packages/lf20_vcfdbwsj.json' style = {{height: '150px'}}></Player>
+      <h5 className='landing-text'>We're all pretending to be adults here</h5>
+      <Player autoplay loop src = 'https://assets5.lottiefiles.com/packages/lf20_vcfdbwsj.json' style={{height: '150px'}}></Player>
       <hr/>
       <SignUpModal setCurrentUser={setCurrentUser} toggle={toggle}/>
       <br/>

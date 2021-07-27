@@ -1,3 +1,4 @@
+import './static/Trivia.css'
 import {useSelector} from 'react-redux'
 
 import Settings from '../containers/quiz/Settings'

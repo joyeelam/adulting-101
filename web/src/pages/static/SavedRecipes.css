@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+
+#savedrecipesh1 {
+    padding-top: 15px;
+    font-family: Karla;
+    text-align: center;
+}
+
+.container {
+    padding: 10px;
+    text-align: center;
+    font-family: Karla;  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#recipetitle {
+    font-size: 20px;
+}
+
+#link {
+    text-decoration: none;
+    color: rgb(8, 4, 4);
+    font-size: 18px;
+}
+
+#link:hover {
+    background-color: #c6214a7c;
+}
+
+.recipelist {
+    padding: 20px;
+    border-style: dashed;
+    border-radius: 10%;
+    border-width: 1.5px;
+    width: 275px;
+    margin: 30px 30px 30px 10px;
+    box-shadow: 0px 3px 7px gray;
+}
+
+
+.delete-btn {
+    border-radius: 40%;
+    border: none;
+    color: red;
+    margin-top: 10px;
+}
+
+.delete-btn:hover {
+    background-color: palegoldenrod;;
+}
+
+#recipeimg {
+    width: 130px;
+    border-radius: 50%;
+}
+
+#recipeimgdiv {
+    padding: 10px;
+}
+
+/* * {
+    outline: 1px solid #f00 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  } */

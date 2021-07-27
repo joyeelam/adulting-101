@@ -11,6 +11,8 @@ import Recipes from './pages/Recipes'
 import Dashboard from './pages/Dashboard'
 import EditProfile from './pages/EditProfile'
 import Cooking from './pages/Cooking.js'
+import Finance from './pages/Finance.js'
+import General from './pages/General.js'
 
 import './App.css'
 
@@ -43,6 +45,8 @@ function App() {
         <Route exact path='/edit' component={EditProfile}/>
         <Route exact path='/recipe-generator' component={Recipes} />
         <Route exact path = '/cooking' component = {Cooking}/>
+        <Route exact path = '/finance' component = {Finance}/>
+        <Route exact path = '/general' component = {General}/>
       </>
     )
   }

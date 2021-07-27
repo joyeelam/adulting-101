@@ -2,17 +2,16 @@ import React from "react";
 import Meal from "./Meal"
 
 function MealPlanList({ mealPlanData }) {
-    const nutrients = mealPlanData.nutrients;
-
+    const n = mealPlanData.nutrients;
     return (
         <div>
             <div id="totalcalories">
                 <h2> Total Daily Calories </h2>
                 <ul className="mealinfo">
-                    <li>Calories: {nutrients.calories.toFixed(0)}</li>
-                    <li>Carbohydrates: {nutrients.carbohydrates.toFixed(0)}</li>
-                    <li>Fat: {nutrients.fat.toFixed(0)}</li>
-                    <li>Protein: {nutrients.protein.toFixed(0)}</li>
+                    <li>Calories: {n.calories.toFixed(0)}</li>
+                    <li>Carbohydrates: {n.carbohydrates.toFixed(0)}</li>
+                    <li>Fat: {n.fat.toFixed(0)}</li>
+                    <li>Protein: {n.protein.toFixed(0)}</li>
                 </ul>
             </div>
 

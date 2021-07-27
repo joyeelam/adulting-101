@@ -76,8 +76,7 @@ const Recipes = () => {
                 setQuery={setQuery}
                 setSearch={setSearch}
                 setFirstSearch={setFirstSearch}
-            /> :
-                <div></div>}
+            /> : null}
 
             {isLoading ? (<p> Fetching Recipes from 3rd party... Wait a moment please </p>) :
 
@@ -96,7 +95,7 @@ const Recipes = () => {
                 </div>
             }
 
-            {!firstSearch && noHits ? <p> No Recipes Found </p> : <p> </p>}
+            {!firstSearch && noHits ? <p> No Recipes Found </p> : null}
 
         </div>
     )

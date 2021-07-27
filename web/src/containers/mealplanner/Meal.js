@@ -1,18 +1,19 @@
 import { useState, useEffect } from "react";
 
 function Meal({ meal }) {
+    const API_KEY = "29448a8ed2254f778b309500b1cfc046";
     const [imageUrl, setImageUrl] = useState("");
 
     useEffect(() => {
         fetch(
-            `https://api.spoonacular.com/recipes/${meal.id}/information?apiKey=29448a8ed2254f778b309500b1cfc046&includeNutrition=false`
+            `https://api.spoonacular.com/recipes/${meal.id}/information?apiKey=${API_KEY}&includeNutrition=false`
         )
-            .then((response) => response.json())
+            .then((resp) => resp.json())
             .then((data) => {
                 setImageUrl(data.image);
             })
-            .catch(() => {
-                console.log("error");
+            .catch((error) => {
+                console.log(error.message);
             });
     }, [meal.id]);
 

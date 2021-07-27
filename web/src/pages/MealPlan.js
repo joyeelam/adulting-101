@@ -4,7 +4,7 @@ import Header from "../containers/mealplanner/Header";
 import "../pages/static/MealPlan.css"
 
 function MealPlan() {
-    const API_KEY = "29448a8ed2254f778b309500b1cfc046";
+    const API_KEY = "f25c3fe4714a4a0893093dd884d16f19";
     const [mealPlanData, setMealPlanData] = useState(null);
     const [calories, setCalories] = useState(2000);
     const [diet, setDiet] = useState("paleo");

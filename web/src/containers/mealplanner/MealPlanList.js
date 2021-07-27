@@ -3,6 +3,7 @@ import Meal from "./Meal"
 
 function MealPlanList({ mealPlanData }) {
     const n = mealPlanData.nutrients;
+
     return (
         <div>
             <div id="totalcalories">
@@ -13,6 +14,7 @@ function MealPlanList({ mealPlanData }) {
                     <li>Fat: {Math.round(n.fat)}</li>
                     <li>Protein: {Math.round(n.protein)}</li>
                 </ul>
+                {/* <button id="save-btn"> SAVE MEAL PLAN </button> */}
             </div>
 
             <div>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 function Meal({ meal }) {
-    const API_KEY = "29448a8ed2254f778b309500b1cfc046";
+    const API_KEY = "f25c3fe4714a4a0893093dd884d16f19";
     const [imageUrl, setImageUrl] = useState("");
 
     useEffect(() => {
@@ -25,7 +25,7 @@ function Meal({ meal }) {
                 <li>Prep time ⧗: {meal.readyInMinutes} minutes</li>
                 <li># of servings: {meal.servings}</li>
             </ul>
-            <button className="get-recipe-btn"> <a href={meal.sourceUrl} target="_blank" className="getrecipelink" rel="noreferrer">Get Recipe ➪</a> </button>
+            <button className="mealplanner-btn"> <a href={meal.sourceUrl} target="_blank" className="getrecipelink" rel="noreferrer">Get Recipe ➪</a> </button>
         </div>
     );
 }

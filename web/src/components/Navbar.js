@@ -52,7 +52,7 @@ const NavigationBar = ({ logOut }) => {
                 <DropdownMenu>
                   <DropdownItem tag="a" href="http://localhost:3000/recipe-generator">Random Recipe Generator </DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem tag="a" href="http://localhost:3000/saved-recipes">Starred Recipes </DropdownItem>
+                  <DropdownItem tag="a" href="http://localhost:3000/saved-recipes">Saved Recipes </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
 

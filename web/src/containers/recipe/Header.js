@@ -7,7 +7,7 @@ const Header = () => {
 
     return (
         <div>
-            <h1> <img id="header-img" src="recipe-imgs/loading_cat.gif" width="120px" alt="cooking cat" onClick={refreshPage}></img></h1>
+            <h1> <img id="header-img" src="recipe-imgs/loading_cat.gif" alt="cooking cat" onClick={refreshPage}></img></h1>
         </div>
 
     );

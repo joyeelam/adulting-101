@@ -6,7 +6,7 @@
 *.eslintcache
 
 # dependencies
-/node_modules
+web/node_modules
 /.pnp
 .pnp.js
 package-lock.json

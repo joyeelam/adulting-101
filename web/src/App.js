@@ -13,6 +13,7 @@ import EditProfile from './pages/EditProfile'
 import Cooking from './pages/Cooking.js'
 import Finance from './pages/Finance.js'
 import General from './pages/General.js'
+import SavedRecipes from './pages/SavedRecipes'
 
 import './App.css'
 
@@ -38,19 +39,19 @@ function App() {
   } else {
     return (
       <>
-        <NavigationBar logOut = {logOut} />
-        <Route exact path='/' component={Homepage}/>
-        <Route exact path='/trivia' component={Trivia}/>
-        <Route exact path='/dashboard' component={Dashboard}/>
-        <Route exact path='/edit' component={EditProfile}/>
+        <NavigationBar logOut={logOut} />
+        <Route exact path='/' component={Homepage} />
+        <Route exact path='/trivia' component={Trivia} />
+        <Route exact path='/dashboard' component={Dashboard} />
+        <Route exact path='/edit' component={EditProfile} />
         <Route exact path='/recipe-generator' component={Recipes} />
         <Route exact path = '/cooking' component = {Cooking}/>
         <Route exact path = '/finance' component = {Finance}/>
         <Route exact path = '/general' component = {General}/>
+        <Route exact path='/saved-recipes' component={SavedRecipes} />
       </>
     )
   }
-
 }
 
 export default App

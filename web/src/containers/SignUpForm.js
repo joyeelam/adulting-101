@@ -34,6 +34,7 @@ const SignUpForm = ({setCurrentUser, toggle}) => {
     .then(resp => {
       // console.log(resp.data)
       localStorage.setItem('token', resp.data.token)
+      localStorage.setItem("id", resp.data.user_id)
       toggle()
       window.location.reload()
       history.push('/')

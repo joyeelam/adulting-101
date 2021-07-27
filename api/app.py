@@ -1,4 +1,3 @@
-import time
 import os, config
 from flask import Flask
 from models.base_model import db
@@ -9,6 +8,7 @@ from flask_jwt_extended import JWTManager
 
 from blueprints.users.views import users_api_blueprint
 from blueprints.trivias.views import trivias_api_blueprint
+from blueprints.recipes.views import recipes_api_blueprint
 
 from models.user import User
 
@@ -24,6 +24,9 @@ app.register_blueprint(users_api_blueprint, url_prefix='/users')
 
 csrf.exempt(trivias_api_blueprint)
 app.register_blueprint(trivias_api_blueprint, url_prefix='/trivias')
+
+csrf.exempt(recipes_api_blueprint)
+app.register_blueprint(recipes_api_blueprint, url_prefix="/recipe-generator")
 
 if os.getenv('FLASK_ENV') == 'production':
     app.config.from_object('config.ProductionConfig')

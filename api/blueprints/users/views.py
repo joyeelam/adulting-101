@@ -1,8 +1,11 @@
+from config import Config
+import rstr
 from flask import Blueprint, request, make_response, jsonify
 from flask_cors import cross_origin
 from flask_jwt_extended import create_access_token
 from werkzeug.security import check_password_hash
-import rstr
+from werkzeug.utils import secure_filename
+from util.aws_s3 import upload_file_to_s3, allowed_file
 
 from models.user import User
 
@@ -64,13 +67,6 @@ def google_login():
     email = user_data['email']
     password = rstr.xeger(r'[A-Za-z\d~!@#$%^&*()_+=]{6,}')
 
-    # user = User.get_or_create(email = email, defaults={'username': username, 'password': password})
-    # if user:
-    #     access_token = create_access_token(identity=user.id)
-    #     return jsonify({'token': access_token, 'user_id': user.id})
-    # else:
-    #     return make_response('Request failed', 500)
-
     user = User.get_or_none(User.email == email)
     if user:
         access_token = create_access_token(identity=user.id)
@@ -91,3 +87,40 @@ def show(id):
         return jsonify({'username': user.username, 'email': user.email, 'profile_image': user.profile_image})
     else:
         return make_response('Request failed', 500)
+
+@users_api_blueprint.route('/<id>/upload', methods=['POST'])
+@cross_origin()
+def upload(id):
+    user = User.get_or_none(User.id == int(id))
+    file = request.files['file']
+    if file and allowed_file(file.filename):
+        file.filename = secure_filename(file.filename)
+        image_path = upload_file_to_s3(file, Config.S3_BUCKET)
+        user.profile_image = image_path
+        if user.save():
+            return make_response('Upload successful', 201)
+    else:
+        return make_response('Request failed', 500)
+
+@users_api_blueprint.route('/<id>/update', methods=['POST'])
+@cross_origin()
+def update(id):
+
+    user = User.get_or_none(User.id == int(id))
+    user_data = request.get_json()
+
+    new_info = {}
+    if user_data['username'] != "":
+        new_info['username'] = user_data['username']
+    if user_data['email'] != "":
+        new_info['email'] = user_data['email']
+    if user_data['password'] != "":
+        new_info['password'] = user_data['password']
+
+    if user:
+        for key in new_info:
+            setattr(user, key, new_info[key])
+            user.save()
+        if user.save():
+            return make_response('Profile successfully updated', 201)    
+    return make_response('Request failed', 500)

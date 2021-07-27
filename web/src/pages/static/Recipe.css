@@ -58,7 +58,6 @@ h1 {
   }
   }
 
-
 .ingr-img {
   width: 80px;
   height: 80px;
@@ -125,10 +124,6 @@ button:hover {
 
 #header-img:hover {
   cursor: pointer;
-}
-
-path {
-  fill: transparent;
 }
 
 text {

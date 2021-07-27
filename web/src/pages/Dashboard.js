@@ -1,7 +1,8 @@
-import './static/Dashboard.css'
+import './static/Profile.css'
 import axios from 'axios'
 import {useState, useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
+import {Button} from 'reactstrap'
 
 const Dashboard = () => {
 
@@ -29,7 +30,7 @@ const Dashboard = () => {
     .catch(error => {
       console.log(error)
     })
-  }, [])
+  }, [user_id])
 
   const handleEdit = (e) => {
     history.push('/edit')
@@ -37,14 +38,13 @@ const Dashboard = () => {
 
   return (
     <div className='dashboard-container'>
-      <h1 className='title'>Dashboard</h1>
       <img className='dashboard-profile' src={user.profile_image} alt='profile'/>
-      <h3>{user.username}</h3>
-      <button onClick={handleEdit}>Edit Profile</button>
+      <br/>
+      <h3 className='title'>{user.username}</h3>
+      <br/>
+      <Button onClick={handleEdit}>Edit Profile</Button>
       <hr/>
-      <div className='badges-container'>
-        Badges will go here (WIP)
-      </div>
+      <div className='badges-container'></div>
     </div>
   )
 }

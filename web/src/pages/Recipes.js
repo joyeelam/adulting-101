@@ -106,9 +106,4 @@ const Recipes = () => {
         </div>
       )}
 
-      {!firstSearch && noHits ? <h5> No Recipes Found </h5> : <p> </p>}
-    </div>
-  );
-}
-
 export default Recipes

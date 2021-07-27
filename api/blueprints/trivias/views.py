@@ -22,7 +22,5 @@ def create():
 @cross_origin()
 def show(id):
     trivias = Trivia.select().where(Trivia.user_id == id)
-    score = []
-    for trivia in trivias:
-        score.append({trivia.category: trivia.score})
-    return jsonify(score)
+    score = {}
+    return jsonify()

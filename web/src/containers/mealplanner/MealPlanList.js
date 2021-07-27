@@ -8,10 +8,10 @@ function MealPlanList({ mealPlanData }) {
             <div id="totalcalories">
                 <h2> Total Daily Calories </h2>
                 <ul className="mealinfo">
-                    <li>Calories: {n.calories.toFixed(0)}</li>
-                    <li>Carbohydrates: {n.carbohydrates.toFixed(0)}</li>
-                    <li>Fat: {n.fat.toFixed(0)}</li>
-                    <li>Protein: {n.protein.toFixed(0)}</li>
+                    <li>Calories: {Math.round(n.calories)}</li>
+                    <li>Carbohydrates: {Math.round(n.carbohydrates)}</li>
+                    <li>Fat: {Math.round(n.fat)}</li>
+                    <li>Protein: {Math.round(n.protein)}</li>
                 </ul>
             </div>
 

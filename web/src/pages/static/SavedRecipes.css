@@ -36,6 +36,15 @@ img {
     box-shadow: 0px 3px 7px gray;
 }
 
+.delete-btn {
+    border-radius: 40%;
+    border: none;
+    color: red;
+}
+
+.delete-btn:hover {
+    background-color: palegoldenrod;;
+}
 
 /* * {
     outline: 1px solid #f00 !important;

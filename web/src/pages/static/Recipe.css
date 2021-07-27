@@ -20,7 +20,7 @@
   font-size: 20px;
 }
 
-h1 {
+#recipe-gen-h1 {
   text-align: center;
 }
 
@@ -106,33 +106,12 @@ button:hover {
   cursor: pointer;
 }
 
-/* .modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 60%;
-  height: 50%;
-  overflow: auto;
-}
-
-.modal-content {
-  margin: 15% auto;
-  padding: 20px;
-  width: 50%;
-} */
-
 #header-img:hover {
   cursor: pointer;
 }
 
-path {
-  fill: transparent;
-}
-
-text {
-  fill: #FF9800;
+#header-img {
+  width: 140px;
 }
 
 #recipe-gen {

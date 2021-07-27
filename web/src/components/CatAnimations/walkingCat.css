@@ -1,0 +1,88 @@
+html,
+body {
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+ */
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+.cat {
+  width: 400px;
+  height: 200px;
+  margin: 50px auto 0;
+}
+
+.move {
+  animation: move-animation 5.5s infinite;
+}
+
+.walking {
+  animation: walk-animation 2s steps(12) infinite;
+  background: url("../CatAnimations/src/assets/cat_tiles.png") 0 0 no-repeat;
+}
+
+.sitting {
+  animation: sit-animation 2s steps(6) infinite;
+  background: url("../CatAnimations/src/assets/cat_tiles.png") 0 0 no-repeat;
+}
+
+.walk-then-sit {
+  animation: walk-animation 2s steps(12) 1, sit-animation 3s 2s steps(6) 1;
+  background: url("../CatAnimations/src/assets/cat_tiles.png") 0 0 no-repeat;
+}
+
+.jumping {
+  animation: jump-animation 15s steps(12) infinite;
+  background: url("../CatAnimations/src/assets/cat_tiles.png") 0 0 no-repeat;
+}
+
+@keyframes walk-animation {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 -2391px;
+  }
+}
+
+@keyframes move-animation {
+  from {
+    margin-left: 120%;
+  }
+
+  to {
+    margin-left: -120%;
+  }
+}
+
+@keyframes sit-animation {
+  from {
+    background-position: -400px 0;
+  }
+
+  to {
+    background-position: -400px -1200px;
+  }
+}
+
+@keyframes jump-animation {
+  from {
+    background-position: -800px 0;
+  }
+
+  to {
+    background-position: -800px -1200px;
+  }
+}

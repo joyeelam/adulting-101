@@ -1,0 +1,9 @@
+{
+  "name": "css-walking-cat",
+  "version": "1.0.0",
+  "description": "Cat walking animation ",
+  "main": "index.js",
+  "author": "Zoran",
+  "license": "MIT",
+  "private": false
+}

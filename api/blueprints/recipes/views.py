@@ -2,12 +2,14 @@ from flask import Blueprint, request, make_response, jsonify
 from flask_cors import cross_origin
 
 from models.savedrecipes import User_recipes
+from models.user import User
 
 recipes_api_blueprint = Blueprint('recipes_api',
                                   __name__,
                                   template_folder='templates')
 
 
+# POST request: save recipes to User_recipes model
 @recipes_api_blueprint.route("/save", methods=["POST"])
 @cross_origin()
 def save():
@@ -28,6 +30,7 @@ def save():
         return make_response('Request failed', 500)
 
 
+# GET saved recipes from User_recipes model to React
 @recipes_api_blueprint.route("/<id>")
 @cross_origin()
 def retrieve_data(id):
@@ -42,18 +45,18 @@ def retrieve_data(id):
     # print(recipes)
     return jsonify(recipes)
 
-    # saved_recipe_data = request.get_json()
-    # recipe_url = saved_recipe_data['recipe_url']
-    # recipe_to_delete = User_recipes.get_or_none(User_recipes.recipe_url == recipe_url)
 
-    # if recipe_to_delete.delete_instance():
-    #     return make_response('Recipe successfully saved', 201)
-    # else:
-    #     print("Recipe removed from Favorites.")
-    #     return make_response('Request failed', 500)
-
-    # recipes.append([{
-    #     "title": recipe.recipe_title
-    # }, {
-    #     "url": recipe.recipe_url
-    # }])
+# Remove starred recipes from Saved Recipes
+@recipes_api_blueprint.route("/remove-recipe", methods=["POST"])
+@cross_origin()
+def remove_recipe():
+    recipe_data = request.get_json()
+    user_id = recipe_data['user_id']
+    recipe_url = recipe_data['recipe_url']
+    print(recipe_url)
+    query = User_recipes.delete().where(User_recipes.user_id == user_id,
+                                        User_recipes.recipe_url == recipe_url)
+    if query.execute():
+        return make_response("Recipe removed from favorites", 201)
+    else:
+        return make_response("Request failed", 500)

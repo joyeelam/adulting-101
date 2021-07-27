@@ -7,16 +7,20 @@ const Recipe = ({ title, calories, image, ingredients, source }) => {
 
     const [data, setData] = useState([])
     const [saveStatus, setSaveStatus] = useState(false)
-    const [dataTitle, setDataTitle] = useState("");
-    const [dataUrl, setDataUrl] = useState("");
+    // const [dataTitle, setDataTitle] = useState("");
+    // const [dataUrl, setDataUrl] = useState("");
     const user_id = localStorage.getItem('id')
 
+    useEffect(() => {
+        console.log("Hello")
+    }, [])
 
     const doSomething = () => {
         axios.get(`http://localhost:5000/recipe-generator/${user_id}`)
             .then(resp => {
                 const recipes = resp.data
                 setData(recipes)
+                // console.log(recipes)
                 console.log(data)
                 // recipes.map(recipe => {
                 //     console.log(recipe.url)

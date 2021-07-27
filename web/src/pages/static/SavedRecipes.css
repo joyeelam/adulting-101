@@ -25,6 +25,7 @@ img {
     border-radius: 50%;
 }
 
+
 .recipelist {
     padding: 20px;
     border-style: dashed;
@@ -35,3 +36,9 @@ img {
     box-shadow: 0px 3px 7px gray;
 }
 
+
+/* * {
+    outline: 1px solid #f00 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  } */

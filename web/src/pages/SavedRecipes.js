@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import style from "../pages/static/SavedRecipes.css"
+import SavedRecipe from "../containers/recipe/SavedRecipeComponent";
+import "../pages/static/SavedRecipes.css"
 
-const ShowRecipes = () => {
+const AllSavedRecipes = () => {
     const [data, setData] = useState([])
     const user_id = localStorage.getItem('id');
 
@@ -16,7 +17,6 @@ const ShowRecipes = () => {
                 const recipes = resp.data
                 setData(recipes)
                 console.log(data)
-
                 // recipes.map(recipe => {
                 //     console.log(recipe.url)
                 //     console.log(recipe.image)
@@ -29,24 +29,14 @@ const ShowRecipes = () => {
 
     return (
         <div className="container">
-            <h1> Saved Recipes: </h1>
+            <h1> Starred Recipes </h1>
             {data.map(recipe => (
-
-                <div className="recipelist">
-                    <a href={recipe.url} id="link" target="_blank" rel="noreferrer">
-                        <div id="recipetitle"> {recipe.title} </div>
-                        <div>
-                            <img src={recipe.image} alt={recipe.title} />
-                        </div>
-                        Get Recipe ➪
-                    </a>
-                </div>
-
+                <SavedRecipe title={recipe.title} url={recipe.url} image={recipe.image} />
             ))
             }
+
         </div >
     )
 }
 
-export default ShowRecipes;
-
+export default AllSavedRecipes;

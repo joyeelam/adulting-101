@@ -9,7 +9,7 @@ recipes_api_blueprint = Blueprint('recipes_api',
                                   template_folder='templates')
 
 
-# POST request: save recipes to User_recipes model
+# save recipes to User_recipes model
 @recipes_api_blueprint.route("/save", methods=["POST"])
 @cross_origin()
 def save():
@@ -30,7 +30,7 @@ def save():
         return make_response('Request failed', 500)
 
 
-# GET saved recipes from User_recipes model to React
+# display saved recipes from User_recipes model
 @recipes_api_blueprint.route("/<id>")
 @cross_origin()
 def retrieve_data(id):
@@ -46,7 +46,7 @@ def retrieve_data(id):
     return jsonify(recipes)
 
 
-# Remove starred recipes from Saved Recipes
+# Remove saved recipes from Saved Recipes
 @recipes_api_blueprint.route("/remove-recipe", methods=["POST"])
 @cross_origin()
 def remove_recipe():

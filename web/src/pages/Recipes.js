@@ -4,6 +4,7 @@ import Recipe from "../containers/recipe/Recipe"
 import Header from '../containers/recipe/Header'
 import SearchIngredients from '../containers/recipe/SearchIngredients'
 import SearchForm from '../containers/recipe/SearchForm'
+import axios from 'axios';
 
 const Recipes = () => {
 
@@ -16,9 +17,12 @@ const Recipes = () => {
     const [firstSearch, setFirstSearch] = useState(true)
     const [noHits, setNoHits] = useState()
     const [query, setQuery] = useState("")
+    const [data, setData] = useState([])
+    const user_id = localStorage.getItem('id')
+    const dataURL = [];
 
     useEffect(() => {
-        getRecipes()
+        getRecipes();
     }, [query])
 
     const getRecipes = async () => {
@@ -29,6 +33,7 @@ const Recipes = () => {
 
         const data = await response.json()
         if (data.hits.length !== 0) {
+            getSavedUrls();
             setRecipes(data.hits);
             setNoHits(false);
             console.log(data.hits);
@@ -42,6 +47,23 @@ const Recipes = () => {
         setIsLoading(false)
     }
 
+    const getSavedUrls = () => {
+        axios.get(`http://localhost:5000/recipe-generator/${user_id}`)
+            .then(resp => {
+                const recipes = resp.data
+                setData(recipes)
+                // console.log(recipes)
+                // console.log(data)
+                // save all the savedrecipe urls into the empty array above
+                recipes.map(recipe => {
+                    dataURL.push(recipe.url)
+                })
+            })
+            .catch((error) => {
+                console.log(error.message)
+            });
+        console.log(dataURL)
+    };
 
     return (
         <div className="App">

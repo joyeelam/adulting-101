@@ -28,15 +28,14 @@ const SavedRecipe = ({ title, url, image }) => {
         <div>
             <div className="recipelist" key={title}>
                 <a href={url} id="link" target="_blank" rel="noreferrer">
-
                     <div id="recipetitle"> {title} </div>
-                    <div>
-                        <img src={image} alt={title} />
+                    <div id="recipeimgdiv">
+                        <img src={image} alt={title} id="recipeimg" />
                     </div>
                     Get Recipe ➪
                 </a>
                 <div>
-                    <button onClick={handleRemove} className="delete-btn"> Delete </button>
+                    <button onClick={handleRemove} className="delete-btn"> X </button>
                 </div>
             </div>
         </div>

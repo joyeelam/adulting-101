@@ -28,12 +28,16 @@ const AllSavedRecipes = () => {
     }
 
     return (
-        <div className="container">
-            <h1> Starred Recipes </h1>
-            {data.map(recipe => (
-                <SavedRecipe title={recipe.title} url={recipe.url} image={recipe.image} />
-            ))
-            }
+        <div>
+            <h1 id="savedrecipesh1"> Saved Recipes </h1>
+
+            <div className="container">
+                {data.map(recipe => (
+                    <SavedRecipe title={recipe.title} url={recipe.url} image={recipe.image} />
+                ))
+                }
+            </div>
+
 
         </div >
     )

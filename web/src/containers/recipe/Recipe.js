@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import style from "../../pages/static/recipe.module.css"
 import axios from 'axios';
 
@@ -11,7 +11,7 @@ const Recipe = ({ title, calories, image, ingredients, source }) => {
     const user_id = localStorage.getItem('id')
 
     const saveRecipe = () => {
-
+      
         if (saveStatus === true) {
             setSaveStatus(false)
             console.log("Recipe removed from Favorites")
@@ -56,9 +56,7 @@ const Recipe = ({ title, calories, image, ingredients, source }) => {
             </ol>
             <button className={style.recipebtn}> <a className={style.getlink} href={source} target="_blank" rel="noreferrer" > Get Recipe </a> </button>
         </div >
-
     );
 }
-
 
 export default Recipe;

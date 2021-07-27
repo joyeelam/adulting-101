@@ -14,6 +14,7 @@ import Cooking from './pages/Cooking.js'
 import SavedRecipes from './pages/SavedRecipes'
 
 import './App.css'
+import MealPlan from './pages/MealPlan'
 
 function App() {
 
@@ -43,8 +44,9 @@ function App() {
         <Route exact path='/dashboard' component={Dashboard} />
         <Route exact path='/edit' component={EditProfile} />
         <Route exact path='/recipe-generator' component={Recipes} />
-        <Route exact path = '/cooking' component = {Cooking} />
+        <Route exact path='/cooking' component={Cooking} />
         <Route exact path='/saved-recipes' component={SavedRecipes} />
+        <Route exact path='/meal-planner' component={MealPlan} />
       </>
     )
   }

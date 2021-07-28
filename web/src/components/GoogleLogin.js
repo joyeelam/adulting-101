@@ -18,7 +18,7 @@ const LoginGoogle = ({setCurrentUser}) => {
 
     axios({
       method: 'POST',
-      url: 'http://localhost:5000/users/google_login',
+      url: 'https://adulthood-101.herokuapp.com/users/google_login',
       data: {
         givenName: name,
         googleId: id,

@@ -8,7 +8,7 @@ const SavedRecipe = ({ title, url, image }) => {
 
         axios({
             method: "POST",
-            url: "http://localhost:5000/recipe-generator/remove-recipe",
+            url: "https://adulthood-101.herokuapp.com/recipe-generator/remove-recipe",
             data: {
                 user_id: user_id,
                 recipe_url: url

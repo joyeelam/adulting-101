@@ -50,11 +50,11 @@ const NavigationBar = ({ logOut }) => {
                   Recipes
                 </DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem tag="a" href="http://localhost:3000/recipe-generator">Random Recipe Generator </DropdownItem>
+                  <DropdownItem tag="a" href="https://pedantic-leakey-9de357.netlify.app/recipe-generator">Random Recipe Generator </DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem tag="a" href="http://localhost:3000/saved-recipes">Saved Recipes </DropdownItem>
+                  <DropdownItem tag="a" href="https://pedantic-leakey-9de357.netlify.app/saved-recipes">Saved Recipes </DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem tag="a" href="http://localhost:3000/meal-planner"> Daily Meal Planner </DropdownItem>
+                  <DropdownItem tag="a" href="https://pedantic-leakey-9de357.netlify.app/meal-planner"> Daily Meal Planner </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </NavItem>

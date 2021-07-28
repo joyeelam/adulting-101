@@ -31,7 +31,7 @@ const BadgeContainer = () => {
   const [score, setScore] = useState([])
 
   useEffect(()=>{
-    axios.get(`http://localhost:5000/trivias/${user_id}`)
+    axios.get(`https://adulthood-101.herokuapp.com/trivias/${user_id}`)
     .then(resp => {
       // console.log(resp)
       setScore(resp.data.score)

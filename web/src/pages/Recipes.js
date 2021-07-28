@@ -47,7 +47,7 @@ const Recipes = () => {
     }
 
     const getSavedUrls = () => {
-        axios.get(`http://localhost:5000/recipe-generator/${user_id}`)
+        axios.get(`https://adulthood-101.herokuapp.com/recipe-generator/${user_id}`)
             .then(resp => {
                 const recipes = resp.data
                 setData(recipes)

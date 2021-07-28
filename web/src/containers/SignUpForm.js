@@ -24,7 +24,7 @@ const SignUpForm = ({setCurrentUser, toggle}) => {
   const signUp = () => {
     axios({
       method: 'POST',
-      url: 'http://localhost:5000/users/',
+      url: 'https://adulthood-101.herokuapp.com/users/',
       data: {
         username: username,
         email: email,
@@ -49,7 +49,7 @@ const SignUpForm = ({setCurrentUser, toggle}) => {
   // username validation
 
   const checkUsername = (newUsername) => {
-    axios.get(`http://localhost:5000/users/check_username/${newUsername}`)
+    axios.get(`https://adulthood-101.herokuapp.com/users/check_username/${newUsername}`)
     .then(resp => {
       // console.log(resp.data)
       if (resp.data.valid) {
@@ -100,7 +100,7 @@ const SignUpForm = ({setCurrentUser, toggle}) => {
 
   const checkEmail = (newEmail) => {
     if (emailRegex.test(newEmail)) {
-      axios.get(`http://localhost:5000/users/check_email/${newEmail}`)
+      axios.get(`https://adulthood-101.herokuapp.com/users/check_email/${newEmail}`)
       .then(resp => {
         // console.log(resp.data)
         if (resp.data.valid) {

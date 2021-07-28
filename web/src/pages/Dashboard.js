@@ -12,7 +12,7 @@ const Dashboard = () => {
   const history = useHistory()
 
   useEffect(()=>{
-    axios.get(`http://localhost:5000/users/get_user/${user_id}`).then(resp => {
+    axios.get(`https://adulthood-101.herokuapp.com/users/get_user/${user_id}`).then(resp => {
       // console.log(resp.data)
       setUser(resp.data)
     })

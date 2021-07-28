@@ -12,7 +12,7 @@ const EditProfile = () => {
   const user_id = localStorage.getItem('id')
 
   useEffect(()=>{
-    axios.get(`http://localhost:5000/users/get_user/${user_id}`).then(resp => {
+    axios.get(`https://adulthood-101.herokuapp.com/users/get_user/${user_id}`).then(resp => {
       setUser(resp.data)
     })
     .catch(error => {
@@ -35,7 +35,7 @@ const EditProfile = () => {
     e.preventDefault()
     let formData = new FormData()
     formData.append('file', profileFile)
-    axios.post(`http://localhost:5000/users/${user_id}/upload`, formData)
+    axios.post(`https://adulthood-101.herokuapp.com/users/${user_id}/upload`, formData)
       .then(resp => console.log(resp))
     window.location.reload()
   }
@@ -55,7 +55,7 @@ const EditProfile = () => {
   const handleEdit = () => {
     axios({
       method: 'POST',
-      url: `http://localhost:5000/users/${user_id}/update`,
+      url: `https://adulthood-101.herokuapp.com/users/${user_id}/update`,
       data: {
         username: username,
         email: email,
@@ -74,7 +74,7 @@ const EditProfile = () => {
   // username validation
 
   const checkUsername = (newUsername) => {
-    axios.get(`http://localhost:5000/users/check_username/${newUsername}`)
+    axios.get(`https://adulthood-101.herokuapp.com/users/check_username/${newUsername}`)
     .then(resp => {
       // console.log(resp.data)
       if (resp.data.valid) {
@@ -125,7 +125,7 @@ const EditProfile = () => {
 
   const checkEmail = (newEmail) => {
     if (emailRegex.test(newEmail)) {
-      axios.get(`http://localhost:5000/users/check_email/${newEmail}`)
+      axios.get(`https://adulthood-101.herokuapp.com/users/check_email/${newEmail}`)
       .then(resp => {
         // console.log(resp.data)
         if (resp.data.valid) {

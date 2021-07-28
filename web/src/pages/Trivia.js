@@ -7,7 +7,6 @@ import Final from "../containers/quiz/Final";
 
 import Cat4 from "../components/CatAnimations/SmolCat";
 
-
 const Trivia = () => {
   const questions = useSelector((state) => state.questions);
   const questionIndex = useSelector((state) => state.index);
@@ -15,18 +14,19 @@ const Trivia = () => {
   let component;
 
   if (questions.length && questionIndex + 1 <= questions.length) {
-    component = <Question />;
+    component = <Question/>;
   } else if (!questions.length) {
-    component = <Settings />;
+    component = <Settings/>;
   } else {
-    component = <Final category={questions[0].category} />;
+    component = <Final category={questions[0].category}/>;
   }
 
   return (
     <div className="quiz-container">
+      <img src='/images/trivia-cat.gif' alt='trivia cat' className='trivia-cat'/>
+      <br/>
       {component}
-      <Cat4 />
-
+      <Cat4/>
     </div>
   );
 };

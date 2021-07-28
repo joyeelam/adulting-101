@@ -1,8 +1,4 @@
-import React from 'react'
-import {
-    Card, CardText, CardBody, CardLink,
-    CardTitle, CardSubtitle
-  } from 'reactstrap';
+import {Card, CardText, CardBody, CardLink, CardTitle, CardSubtitle} from 'reactstrap'
 
 const Latest = ({title,image,description}) => {
     return (
@@ -20,7 +16,7 @@ const Latest = ({title,image,description}) => {
             </CardBody>
             </Card>
         </div>
-    );
+    )
 }
 
-export default Latest;
+export default Latest

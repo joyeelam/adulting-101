@@ -16,6 +16,7 @@ import General from './pages/General.js'
 import SavedRecipes from './pages/SavedRecipes'
 
 import './App.css'
+import MealPlan from './pages/MealPlan'
 
 function App() {
 
@@ -49,6 +50,7 @@ function App() {
         <Route exact path = '/finance' component = {Finance}/>
         <Route exact path = '/general' component = {General}/>
         <Route exact path='/saved-recipes' component={SavedRecipes} />
+        <Route exact path='/meal-planner' component={MealPlan} />
       </>
     )
   }

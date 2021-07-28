@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import { useHistory } from 'react-router-dom'
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, DropdownItem, Dropdown, DropdownToggle, DropdownMenu } from 'reactstrap'
+import {useState} from 'react'
+import {useHistory} from 'react-router-dom'
+import {Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, DropdownItem, Dropdown, DropdownToggle, DropdownMenu} from 'reactstrap'
 
 const NavigationBar = ({ logOut }) => {
 
@@ -35,7 +35,7 @@ const NavigationBar = ({ logOut }) => {
 
   return (
     <div>
-      <Navbar color="light" light expand="md">
+      <Navbar light expand="md" className='navbar'>
         <NavbarBrand className='landing-title' href="/">Adulting 101</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -52,10 +52,11 @@ const NavigationBar = ({ logOut }) => {
                 <DropdownMenu>
                   <DropdownItem tag="a" href="http://localhost:3000/recipe-generator">Random Recipe Generator </DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem tag="a" href="http://localhost:3000/saved-recipes">Starred Recipes </DropdownItem>
+                  <DropdownItem tag="a" href="http://localhost:3000/saved-recipes">Saved Recipes </DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem tag="a" href="http://localhost:3000/meal-planner"> Daily Meal Planner </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
-
             </NavItem>
             <NavItem>
               <NavLink onClick={handleDashboard}>Dashboard</NavLink>
@@ -63,7 +64,6 @@ const NavigationBar = ({ logOut }) => {
             <NavItem>
               <NavLink onClick={handleLogout}>Log Out</NavLink>
             </NavItem>
-
           </Nav>
         </Collapse>
       </Navbar>

@@ -62,9 +62,9 @@ const FinalScreen = ({category}) => {
 
   if (score === 5) {
     animation =
-    <Player autoplay loop src='https://assets1.lottiefiles.com/packages/lf20_6LimOm.json' style ={{height:'150px'}}></Player>
+    <Player autoplay loop src='https://assets3.lottiefiles.com/packages/lf20_udvbqjg3.json' style ={{height:'150px'}}></Player>
   } else {
-    animation = <Player autoplay loop src='https://assets5.lottiefiles.com/packages/lf20_Zz37yH.json' style ={{height:'150px'}}></Player>
+    animation = <Player autoplay loop src='https://assets3.lottiefiles.com/packages/lf20_sgzw5ogf.json' style ={{height:'150px'}}></Player>
   }
 
   return (
@@ -73,7 +73,7 @@ const FinalScreen = ({category}) => {
         {animation}
       </div>
       <br/>
-      <h4 className='final-title'>Final Score: {score}</h4>
+      <h4 className='final-title'>Final Score: {score} out of 5</h4>
       <button onClick={replay}>Try again</button>
       <button onClick={handleSave}>Save score</button>
       <button onClick={settings}>Back to settings</button>

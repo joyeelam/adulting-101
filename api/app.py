@@ -12,7 +12,7 @@ from blueprints.recipes.views import recipes_api_blueprint
 
 from models.user import User
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='./build', static_url_path='/')
 cors = CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000/*"}})
 csrf = CSRFProtect(app)
 jwt = JWTManager(app)
@@ -50,4 +50,8 @@ def load_user(user_id):
 
 @app.route('/')
 def index():
-    return "Hello, this is our Flask server"
+    return app.send_static_file('index.html')
+
+@app.errorhandler(404)
+def not_found(e):
+    return app.send_static_file('index.html')

@@ -32,6 +32,10 @@
   padding-top: 20px;
 }
 
+.App {
+  padding-top: 80px;
+}
+
 
 .ingredients {
   display:flex;

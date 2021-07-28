@@ -1,6 +1,6 @@
-import {useState} from 'react'
-import {useHistory} from 'react-router-dom'
-import {Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, DropdownItem, Dropdown, DropdownToggle, DropdownMenu} from 'reactstrap'
+import { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, DropdownItem, Dropdown, DropdownToggle, DropdownMenu } from 'reactstrap'
 
 const NavigationBar = ({ logOut }) => {
 
@@ -29,14 +29,10 @@ const NavigationBar = ({ logOut }) => {
     history.push('/dashboard')
   }
 
-  // const handleRecipe = (e) => {
-  //   history.push('/recipe-generator')
-  // }
-
   return (
     <div>
-      <Navbar light expand="md" className='navbar'>
-        <NavbarBrand className='landing-title' href="/">Adulting 101</NavbarBrand>
+      <Navbar light expand="md" className='navbar' fixed="top">
+        <NavbarBrand id="navbartitle" href="/">Adulting 101</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ms-auto" navbar>

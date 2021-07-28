@@ -28,7 +28,7 @@ const AllSavedRecipes = () => {
     }
 
     return (
-        <div>
+        <div className="topcontainer">
             <h1 id="savedrecipesh1"> Saved Recipes </h1>
 
             <div className="container">

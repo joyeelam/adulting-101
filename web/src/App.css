@@ -12,4 +12,9 @@ body {
   padding: 2rem 1rem 2rem 1rem;
   font-family: 'Karla', sans-serif;
   font-size: 1.2rem;
+  background-color: white;
+}
+
+#navbartitle {
+  font-family: 'Tourney', sans-serif;
 }

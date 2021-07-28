@@ -55,4 +55,4 @@ const LoginGoogle = ({setCurrentUser}) => {
   )
 }
 
-export default LoginGoogle
+export default LoginGoogle;

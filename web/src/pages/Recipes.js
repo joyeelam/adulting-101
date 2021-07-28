@@ -19,10 +19,10 @@ const Recipes = () => {
     const [query, setQuery] = useState("")
     const [data, setData] = useState([])
     const user_id = localStorage.getItem('id')
-    const dataURL = [];
 
     useEffect(() => {
         getRecipes();
+        getSavedUrls();
     }, [query])
 
     const getRecipes = async () => {
@@ -33,7 +33,6 @@ const Recipes = () => {
 
         const data = await response.json()
         if (data.hits.length !== 0) {
-            getSavedUrls();
             setRecipes(data.hits);
             setNoHits(false);
             console.log(data.hits);
@@ -53,16 +52,12 @@ const Recipes = () => {
                 const recipes = resp.data
                 setData(recipes)
                 // console.log(recipes)
-                // console.log(data)
-                // save all the savedrecipe urls into the empty array above
-                recipes.map(recipe => {
-                    dataURL.push(recipe.url)
-                })
+                console.log(data)
+
             })
             .catch((error) => {
                 console.log(error.message)
             });
-        console.log(dataURL)
     };
 
     return (
@@ -81,12 +76,11 @@ const Recipes = () => {
                 setQuery={setQuery}
                 setSearch={setSearch}
                 setFirstSearch={setFirstSearch}
-            /> :
-                <div></div>}
+            /> : null}
 
             {isLoading ? (<p> Fetching Recipes from 3rd party... Wait a moment please </p>) :
 
-                <div className="recipes">
+                <div className="recipes-container">
 
                     {recipes.map(recipe => (
                         <Recipe
@@ -101,9 +95,10 @@ const Recipes = () => {
                 </div>
             }
 
-            {!firstSearch && noHits ? <p> No Recipes Found </p> : <p> </p>}
+            {!firstSearch && noHits ? <p> No Recipes Found </p> : null}
 
         </div>
-      )}
+    )
+}
 
 export default Recipes

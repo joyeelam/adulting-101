@@ -24,20 +24,20 @@
   text-align: center;
 }
 
-.recipes {
+.recipes-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   border: 1px;
   padding-top: 20px;
 }
 
+
 .ingredients {
   display:flex;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-wrap: wrap;
   margin: 15px;
-  flex-direction: row;
 }
 
 @keyframes bounce {

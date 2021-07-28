@@ -5,10 +5,8 @@ import axios from 'axios'
 // Recipe Component
 const Recipe = ({ title, calories, image, ingredients, source }) => {
 
-    // const [data, setData] = useState([])
-    // const dataURL = [];
-    const [saveStatus, setSaveStatus] = useState(false)
-    const user_id = localStorage.getItem('id')
+    const [saveStatus, setSaveStatus] = useState(false);
+    const user_id = localStorage.getItem('id');
 
     const saveRecipe = () => {
 
@@ -41,21 +39,24 @@ const Recipe = ({ title, calories, image, ingredients, source }) => {
     };
 
     return (
+        <div>
 
-        <div className={style.recipecard}>
+            <div className={style.recipecard}>
+                <div className={saveStatus === true ? style.ribbonsaved : style.ribbon} onClick={saveRecipe}> </div>
+                <h3> {title} </h3>
+                <img src={image} alt="" className={style.image} />
+                <p> {Math.round(calories)} calories </p>
+                <h4> Ingredients: </h4>
+                <ol className={style.ingredientList}>
+                    {ingredients.map(ingredient => (
+                        <li key={Math.random(150)}>{ingredient.text}</li>
+                    ))}
+                </ol>
+                <button className={style.recipebtn}> <a className={style.getlink} href={source} target="_blank" rel="noreferrer" > Get Recipe </a> </button>
+            </div>
 
-            <div className={saveStatus === true ? style.ribbonsaved : style.ribbon} onClick={saveRecipe}> </div>
-            <h3> {title} </h3>
-            <img src={image} alt="" className={style.image} />
-            <p> {Math.round(calories)} calories </p>
-            <h4> Ingredients: </h4>
-            <ol className={style.ingredientList}>
-                {ingredients.map(ingredient => (
-                    <li key={Math.random(150)}>{ingredient.text}</li>
-                ))}
-            </ol>
-            <button className={style.recipebtn}> <a className={style.getlink} href={source} target="_blank" rel="noreferrer" > Get Recipe </a> </button>
-        </div >
+        </div>
+
     );
 }
 

@@ -43,20 +43,3 @@ const SavedRecipe = ({ title, url, image }) => {
 }
 
 export default SavedRecipe;
-
-
-{/* <div>
-<div className="recipelist" key={recipe.title}>
-    <a href={recipe.url} id="link" target="_blank" rel="noreferrer">
-
-        <div id="recipetitle"> {recipe.title} </div>
-        <div>
-            <img src={recipe.image} alt={recipe.title} />
-        </div>
-        Get Recipe ➪
-    </a>
-    <div>
-        <button onClick={handleRemove} className="delete-btn"> Delete </button>
-    </div>
-</div>
-</div> */}

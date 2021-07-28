@@ -18,3 +18,7 @@ body {
 #navbartitle {
   font-family: 'Tourney', sans-serif;
 }
+
+#contents {
+  margin-top: 7rem;
+}

@@ -41,16 +41,19 @@ function App() {
     return (
       <>
         <NavigationBar logOut={logOut} />
-        <Route exact path='/' component={Homepage} />
-        <Route exact path='/trivia' component={Trivia} />
-        <Route exact path='/dashboard' component={Dashboard} />
-        <Route exact path='/edit' component={EditProfile} />
-        <Route exact path='/recipe-generator' component={Recipes} />
-        <Route exact path = '/cooking' component = {Cooking}/>
-        <Route exact path = '/finance' component = {Finance}/>
-        <Route exact path = '/general' component = {General}/>
-        <Route exact path='/saved-recipes' component={SavedRecipes} />
-        <Route exact path='/meal-planner' component={MealPlan} />
+        <div id="contents">
+          <Route exact path='/' component={Homepage} />
+          <Route exact path='/trivia' component={Trivia} />
+          <Route exact path='/dashboard' component={Dashboard} />
+          <Route exact path='/edit' component={EditProfile} />
+          <Route exact path='/recipe-generator' component={Recipes} />
+          <Route exact path='/cooking' component={Cooking} />
+          <Route exact path='/finance' component={Finance} />
+          <Route exact path='/general' component={General} />
+          <Route exact path='/saved-recipes' component={SavedRecipes} />
+          <Route exact path='/meal-planner' component={MealPlan} />
+        </div>
+
       </>
     )
   }

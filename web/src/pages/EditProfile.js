@@ -298,19 +298,19 @@ const EditProfile = () => {
           {getPasswordFormFeedback()}
         </FormGroup>
         <br/>
-        <Button
-          color="primary" size='sm'
+        <button
+          className='save-edit'
           onClick={handleEdit}
         >
           Save Changes
-        </Button>
+        </button>
         {' '}
-        <Button
-          outline color="secondary" size='sm'
+        <button
+          className='cancel-edit'
           onClick={handleCancel}
         >
           Cancel
-        </Button>
+        </button>
       </Form>
     </div>
   )

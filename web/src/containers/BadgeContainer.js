@@ -2,7 +2,6 @@ import axios from 'axios'
 import {useState, useEffect} from 'react'
 import 'simplegoals/dist/simplegoals.min.css'
 import SimpleGoals from 'simplegoals'
-import {Button} from 'reactstrap'
 
 const BadgeContainer = () => {
 
@@ -22,10 +21,10 @@ const BadgeContainer = () => {
   }
 
   const handleClick = (e) => {
+    SimpleGoals.showOverview()
     SimpleGoals.init({
       goals:goals
     })
-    SimpleGoals.showOverview()
   }
 
   const user_id = localStorage.getItem('id')
@@ -53,9 +52,7 @@ const BadgeContainer = () => {
   }
 
   return (
-    <>
-      <Button onClick={handleClick}>View Achievements</Button>
-    </>
+    <button className='profile-button' onClick={handleClick}>View Achievements</button>
   )
 }
 

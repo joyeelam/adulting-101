@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import {useState} from 'react'
 import style from "../../pages/static/recipe.module.css"
-import axios from 'axios';
+import axios from 'axios'
 
 // Recipe Component
 const Recipe = ({ title, calories, image, ingredients, source }) => {
@@ -11,7 +11,7 @@ const Recipe = ({ title, calories, image, ingredients, source }) => {
     const user_id = localStorage.getItem('id')
 
     const saveRecipe = () => {
-      
+
         if (saveStatus === true) {
             setSaveStatus(false)
             console.log("Recipe removed from Favorites")

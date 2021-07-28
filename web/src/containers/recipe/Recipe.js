@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import style from "../../pages/static/recipe.module.css"
 import axios from 'axios'
 
@@ -20,7 +20,7 @@ const Recipe = ({ title, calories, image, ingredients, source }) => {
 
             axios({
                 method: "POST",
-                url: "http://localhost:5000/recipe-generator/save",
+                url: "https://adulthood-101.herokuapp.com/recipe-generator/save",
                 data: {
                     user_id: user_id,
                     recipe_title: title,

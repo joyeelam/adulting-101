@@ -1,9 +1,9 @@
 import axios from 'axios'
-import {useHistory} from 'react-router-dom'
-import {useSelector, useDispatch} from 'react-redux'
-import {Player} from '@lottiefiles/react-lottie-player'
+import { useHistory } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { Player } from '@lottiefiles/react-lottie-player'
 
-const FinalScreen = ({category}) => {
+const FinalScreen = ({ category }) => {
 
   const score = useSelector(state => state.score)
   const dispatch = useDispatch()
@@ -41,30 +41,30 @@ const FinalScreen = ({category}) => {
 
     axios({
       method: 'POST',
-      url: 'http://localhost:5000/trivias/',
+      url: 'https://adulthood-101.herokuapp.com/trivias/',
       data: {
         category: category,
         score: score,
         user_id: user_id
       }
     })
-    .then(resp => {
-      console.log(resp)
-      window.location.reload()
-      history.push('/trivia')
-    })
-    .catch(error => {
-      console.log(error)
-    })
+      .then(resp => {
+        console.log(resp)
+        window.location.reload()
+        history.push('/trivia')
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }
 
   let animation
 
   if (score === 5) {
     animation =
-    <Player autoplay loop src='https://assets3.lottiefiles.com/packages/lf20_udvbqjg3.json' style ={{height:'150px'}}></Player>
+      <Player autoplay loop src='https://assets3.lottiefiles.com/packages/lf20_udvbqjg3.json' style={{ height: '150px' }}></Player>
   } else {
-    animation = <Player autoplay loop src='https://assets3.lottiefiles.com/packages/lf20_sgzw5ogf.json' style ={{height:'150px'}}></Player>
+    animation = <Player autoplay loop src='https://assets3.lottiefiles.com/packages/lf20_sgzw5ogf.json' style={{ height: '150px' }}></Player>
   }
 
   return (
@@ -72,7 +72,7 @@ const FinalScreen = ({category}) => {
       <div>
         {animation}
       </div>
-      <br/>
+      <br />
       <h4 className='final-title'>Final Score: {score} out of 5</h4>
       <button onClick={replay}>Try again</button>
       <button onClick={handleSave}>Save score</button>

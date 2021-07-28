@@ -13,7 +13,7 @@ from blueprints.recipes.views import recipes_api_blueprint
 from models.user import User
 
 app = Flask(__name__, static_folder='./build', static_url_path='/')
-cors = CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000/*"}})
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 csrf = CSRFProtect(app)
 jwt = JWTManager(app)
 login_manager = LoginManager()

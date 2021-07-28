@@ -2,7 +2,6 @@ import './static/Profile.css'
 import axios from 'axios'
 import {useState, useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
-import {Button} from 'reactstrap'
 
 import BadgeContainer from '../containers/BadgeContainer'
 
@@ -30,9 +29,9 @@ const Dashboard = () => {
     <div className='dashboard-container'>
       <img className='dashboard-profile' src={user.profile_image} alt='profile'/>
       <br/>
-      <h3 className='title'>{user.username}</h3>
+      <h3 className='profile-title'>{user.username}</h3>
       <br/>
-      <Button onClick={handleEdit}>Edit Profile</Button>
+      <button className='profile-button' onClick={handleEdit}>Edit Profile</button>
       <hr/>
       <div className='badges-container'>
         <BadgeContainer/>

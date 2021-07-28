@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import {useState} from 'react'
 import style from "../../pages/static/recipe.module.css"
-import axios from 'axios';
+import axios from 'axios'
 
 // Recipe Component
 const Recipe = ({ title, calories, image, ingredients, source }) => {

@@ -24,7 +24,7 @@ body {
 }
 
 .move {
-  animation: move-animation 5.5s infinite;
+  animation: move-animation 20s infinite;
 }
 
 .walking {

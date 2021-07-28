@@ -8,8 +8,8 @@ const Homepage = () => {
     <div>
       <Jumbo />
       <Cards />
-      <div className="container">
-        <div className="cat walk-then-sit"></div>
+      <div className="container move">
+        <div className="cat walking"></div>
       </div>
     </div>
   );

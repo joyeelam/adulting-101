@@ -1,26 +1,45 @@
-import React, {useState, useEffect} from "react";
-import {
-    Card, CardText, CardBody, CardLink,
-    CardTitle, CardSubtitle
-  } from 'reactstrap';
+import React, { useState, useEffect } from "react";
+import General from "../components/General";
 
-const General = (props) => {
-        return (
-          <div>
-            <Card>
-              <CardBody>
-                <CardTitle tag="h5">Card title</CardTitle>
-                <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle>
-              </CardBody>
-              <img width="100%" src="/assets/318x180.svg" alt="Card image cap" />
-              <CardBody>
-                <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <CardLink href="#">Card Link</CardLink>
-                <CardLink href="#">Another Link</CardLink>
-              </CardBody>
-            </Card>
-          </div>
-        );
-      };
 
-export default General;
+
+function GeneralKnowledge() {
+
+  const [cat,setCat] = useState([])
+
+    useEffect(() => {
+        getCat();
+    }, []);
+
+    const getCat = async () => {
+        const response = await fetch("https://catfact.ninja/fact")
+        const data = await response.json()
+        setCat(data.fact);
+    }
+
+    const [fact,setFact] = useState([])
+
+    useEffect(() => {
+        getFact();
+    }, []);
+
+    const getFact = async () => {
+        const response = await fetch("https://api.adviceslip.com/advice")
+        const data = await response.json()
+        setFact(data.slip.advice);
+    }
+
+
+
+  return (
+    <div>
+      <General
+        cat={cat}
+        fact={fact}
+      />
+    </div>
+
+   );
+};
+
+export default GeneralKnowledge;

@@ -1,17 +1,19 @@
 import {Card, CardText, CardBody, CardLink, CardTitle, CardSubtitle} from 'reactstrap'
 
-const Latest = ({title,image,description}) => {
+import "./static/Financelayout.css"
+
+const Financelayout = ({title, content,image,author,url}) => {
     return (
         <div>
             <Card>
             <CardBody>
-                <CardTitle tag="h5">Card title</CardTitle>
-                <CardSubtitle tag="h6" className="mb-2 text-muted"></CardSubtitle>
+                <CardTitle tag="h5">{title}</CardTitle>
+                <CardSubtitle tag="h6" className="mb-2 text-muted">{author}</CardSubtitle>
             </CardBody>
-            <img width="100%" src="/assets/318x180.svg" alt="Card image cap" />
+            <img className="image" src={image} alt="sorry about that, be right back!" />
             <CardBody>
-                <CardText></CardText>
-                <CardLink href="#"></CardLink>
+                <CardText>{content}</CardText>
+                <CardLink href={url}>Learn more</CardLink>
                 <CardLink href="#"></CardLink>
             </CardBody>
             </Card>
@@ -19,4 +21,4 @@ const Latest = ({title,image,description}) => {
     )
 }
 
-export default Latest
+export default Financelayout

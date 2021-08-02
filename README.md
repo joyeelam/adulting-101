@@ -1,6 +1,7 @@
-# Getting Started with React-Flask-App
+# Next Academy - Final Group Project
 
-Main reference `https://blog.miguelgrinberg.com/post/how-to-create-a-react--flask-project`
+This was a group challenge to create a web application incorporating what we have learned throughout the bootcamp. 
+We decided on a full-stack app combining React as the front-end framework, Flask to serve data via RESTful API and PostgreSQL.
 
 **Install Dependencies**
 
@@ -44,5 +45,4 @@ $ npm start
 ```
 $ npm run start-api
 ```
-- We don't need to do Flask run because under web > package.json line 25, this has been configured (change into the api subdirectory and then run `flask run`)
-- Now the server will reload automatically when changes are made, there is no need to stop the flask server and restart
+- Flask server can be accessed via (http://localhost:5000)

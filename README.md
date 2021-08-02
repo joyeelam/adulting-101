@@ -3,6 +3,8 @@
 This was a group challenge to create a web application incorporating what we have learned throughout the bootcamp. 
 We decided on a full-stack app combining React as the front-end framework, Flask to serve data via RESTful API and PostgreSQL.
 
+<img width="1150" alt="Screenshot 2021-08-02 at 4 24 33 PM" src="https://user-images.githubusercontent.com/64724653/127830968-03e77a16-fe60-4534-95e2-d659c0e3651e.png">
+
 **Install Dependencies**
 
 - Python 3.9.5
